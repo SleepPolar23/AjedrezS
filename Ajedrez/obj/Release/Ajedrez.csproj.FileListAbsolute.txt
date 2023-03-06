@@ -1,0 +1,11 @@
+C:\Users\Cristian\source\repos\Ajedrez5\Ajedrez\bin\Release\Ajedrez.exe.config
+C:\Users\Cristian\source\repos\Ajedrez5\Ajedrez\bin\Release\Ajedrez.exe
+C:\Users\Cristian\source\repos\Ajedrez5\Ajedrez\bin\Release\Ajedrez.pdb
+C:\Users\Cristian\source\repos\Ajedrez5\Ajedrez\obj\Release\Ajedrez.csproj.AssemblyReference.cache
+C:\Users\Cristian\source\repos\Ajedrez5\Ajedrez\obj\Release\Ajedrez.csproj.SuggestedBindingRedirects.cache
+C:\Users\Cristian\source\repos\Ajedrez5\Ajedrez\obj\Release\Ajedrez.Ajedrez.resources
+C:\Users\Cristian\source\repos\Ajedrez5\Ajedrez\obj\Release\Ajedrez.Properties.Resources.resources
+C:\Users\Cristian\source\repos\Ajedrez5\Ajedrez\obj\Release\Ajedrez.csproj.GenerateResource.cache
+C:\Users\Cristian\source\repos\Ajedrez5\Ajedrez\obj\Release\Ajedrez.csproj.CoreCompileInputs.cache
+C:\Users\Cristian\source\repos\Ajedrez5\Ajedrez\obj\Release\Ajedrez.exe
+C:\Users\Cristian\source\repos\Ajedrez5\Ajedrez\obj\Release\Ajedrez.pdb
