@@ -50,21 +50,12 @@ public partial class Ajedrez : Form
         var tablero = new Tablero(rows, rows);
         foreach (var tableroCasilla in tablero.Casillas)
         {
-            PictureBox pb = new PictureBox(); // Crear un nuevo PictureBox
-            pb.Size = new Size(size, size); // Asignar el tamaño
-            pb.Location = new Point(tableroCasilla.Columna * size, tableroCasilla.Fila * size); // Asignar la ubicación
-            if (tableroCasilla.ColorCasilla is ColorCasilla.Blanco)
-            {
-                pb.BackColor = Color.FromArgb(106, 117, 136); // Asignar el color negro
-                pb.Name = "Blanco";
-            }
-            else
-            {
-                pb.BackColor = Color.FromArgb(42, 49, 62); // Asignar el color blanco
-                pb.Name = "Negro";
-            }
+            var pb = BuilderPictureBox.Create()
+                .WithSize(size)
+                .WithAction(PictureBox_Click)
+                .ToCasilla(tableroCasilla)
+                .Build();
 
-            pb.Click += PictureBox_Click;
             Tablero.Controls.Add(pb); // Añadir el PictureBox al panel
             mapaDelTablero[tableroCasilla.Fila, tableroCasilla.Columna] = new Piezas(pb);
         }
