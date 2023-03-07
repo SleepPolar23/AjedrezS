@@ -9,20 +9,13 @@ public class LoaderImage
     private string _carpetaB = "Piezas/Piezas Blancas";
     private string _carpetaN = "Piezas/Piezas Negras";
 
-    public IEnumerable<Image> GetBlancas()
-    {
-        // get the names of files in _carpetaB
-        var files = Directory.GetFiles(_carpetaB);
-        foreach (var file in files)
-        {
-            yield return Image.FromFile(file);
-        }
-    }
+    public IEnumerable<Image> GetBlancas() => GetPiezas(_carpetaB);
 
-    public IEnumerable<Image> GetNegras()
+    public IEnumerable<Image> GetNegras() => GetPiezas(_carpetaN);
+
+    private IEnumerable<Image> GetPiezas(string nameFolder)
     {
-        // get the names of files in _carpetaN
-        var files = Directory.GetFiles(_carpetaN);
+        var files = Directory.GetFiles(nameFolder);
         foreach (var file in files)
         {
             yield return Image.FromFile(file);
