@@ -46,6 +46,8 @@ public class BuilderPictureBox
         if (_casilla.ColorCasilla == ColorCasilla.Blanco) SetColorBlanco();
         else SetColorNegro();
 
+        _pictureBox.Image = _casilla.Pieza?._image;
+
         return _pictureBox;
     }
 

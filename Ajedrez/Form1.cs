@@ -11,14 +11,6 @@ namespace Ajedrez;
 
 public partial class Ajedrez : Form
 {
-    Color ColorNegro = Color.FromArgb(64, 95, 118);
-    Color ColorBlanco = Color.FromArgb(98, 131, 157);
-    Color ColorNegroSuave = Color.FromArgb(42, 49, 62);
-    Color ColorBlancoSuave = Color.FromArgb(106, 117, 136);
-
-    Piezas[,] mapaDelTablero = new Piezas[8, 8];
-    List<Image> blancas;
-    List<Image> negras;
     private bool PiezaClickeada;
     List<Point> temporalDeClick = new List<Point>();
     List<Point> ultimoMovimiento = new List<Point>();
@@ -29,21 +21,10 @@ public partial class Ajedrez : Form
     public Ajedrez()
     {
         InitializeComponent();
-        ImagenesDeLasPiezas();
     }
 
     private void Form1_Load(object sender, EventArgs e) => CrearTablero(100, 8, 8);
 
-    private void ImagenesDeLasPiezas()
-    {
-        var loaderImage = new LoaderImage();
-        //Blancas
-        blancas = loaderImage.GetBlancas().ToList();
-        //Negras
-        negras = loaderImage.GetNegras().ToList();
-    }
-
-    #region CrearTablero
 
     private void CrearTablero(int size, int rows, int cols)
     {
@@ -52,22 +33,20 @@ public partial class Ajedrez : Form
         {
             var pb = BuilderPictureBox.Create()
                 .WithSize(size)
-                .WithAction(PictureBox_Click)
+                //.WithAction(PictureBox_Click)
                 .ToCasilla(tableroCasilla)
                 .Build();
 
             Tablero.Controls.Add(pb); // Añadir el PictureBox al panel
-            mapaDelTablero[tableroCasilla.Fila, tableroCasilla.Columna] = new Piezas(pb);
         }
 
-        OrdenarPiezas();
         Tablero.Location = new Point((Width - Tablero.Width) / 2, (Height - Tablero.Height) / 2);
         Tablero.Visible = true;
     }
 
-    #endregion
+    #region CrearTablero
 
-
+    /*
     #region PictureBoxClick
 
     private void PictureBox_Click(object sender, EventArgs e)
@@ -339,6 +318,9 @@ public partial class Ajedrez : Form
         mapaDelTablero[7, 4].TipoPieza = 4;
         mapaDelTablero[7, 4].Color = 0;
     }
+
+    #endregion
+*/
 
     #endregion
 }

@@ -1,5 +1,6 @@
-using System;
+#nullable enable
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Ajedrez.Controller;
 
@@ -20,33 +21,13 @@ public class Tablero
                 Casillas.Add(new Casilla(color, i, j));
             }
         }
+
+        SetPiezasToCasillas();
     }
-}
 
-public class Casilla
-{
-    public ColorCasilla ColorCasilla { get; set; }
-    public int Fila { get; set; }
-    public int Columna { get; set; }
-
-    public Casilla(int color, int fila, int columna)
+    private void SetPiezasToCasillas()
     {
-        if (Enum.TryParse<ColorCasilla>(color.ToString(), out var colorEnum))
-        {
-            ColorCasilla = colorEnum;
-        }
-        else
-        {
-            throw new Exception("No se pudo convertir el color");
-        }
-
-        Fila = fila;
-        Columna = columna;
+        new TableroDefault(ColorCasilla.Blanco, Casillas).SetPiezasToCasillas();
+        new TableroDefault(ColorCasilla.Negro, Casillas).SetPiezasToCasillas();
     }
-}
-
-public enum ColorCasilla
-{
-    Blanco,
-    Negro,
 }

@@ -6,16 +6,18 @@ namespace Ajedrez.Controller;
 
 public class LoaderImage
 {
-    private string _carpetaB = "Piezas/Piezas Blancas";
-    private string _carpetaN = "Piezas/Piezas Negras";
+    public static string CarpetaB = "Piezas/Piezas Blancas";
+    public static string CarpetaN = "Piezas/Piezas Negras";
+    private readonly string _folder;
 
-    public IEnumerable<Image> GetBlancas() => GetPiezas(_carpetaB);
-
-    public IEnumerable<Image> GetNegras() => GetPiezas(_carpetaN);
-
-    private IEnumerable<Image> GetPiezas(string nameFolder)
+    public LoaderImage(string folder)
     {
-        var files = Directory.GetFiles(nameFolder);
+        _folder = folder;
+    }
+
+    public IEnumerable<Image> GetPiezas()
+    {
+        var files = Directory.GetFiles(_folder);
         foreach (var file in files)
         {
             yield return Image.FromFile(file);
