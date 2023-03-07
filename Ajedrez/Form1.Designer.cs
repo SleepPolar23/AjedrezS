@@ -1,5 +1,4 @@
-﻿namespace Ajedrez
-{
+﻿namespace Ajedrez;
     partial class Ajedrez
     {
         /// <summary>
@@ -60,5 +59,3 @@
         #endregion
         private System.Windows.Forms.Panel Tablero;
     }
-}
-
