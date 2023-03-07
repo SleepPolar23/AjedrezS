@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
+using Ajedrez.Controller;
 
 
 namespace Ajedrez
@@ -23,13 +25,13 @@ namespace Ajedrez
         Point tempPiezaClick;
         int jugadorActual = 0;
 
-        
 
         public Ajedrez()
         {
             InitializeComponent();
             ImagenesDeLasPiezas();
         }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             CrearTablero(100, 8, 8);
@@ -37,35 +39,21 @@ namespace Ajedrez
 
 
         #region ImagenesDeLasPiezas
+
         private void ImagenesDeLasPiezas()
         {
-            string carpetaB = "/Users/Cristian/Downloads/Piezas/Piezas Blancas/";
-            string carpetaN = "/Users/Cristian/Downloads/Piezas/Piezas Negras/";
+            var loaderImage = new LoaderImage();
             //Blancas
-            blancas = new List<Image>()
-            {
-            Image.FromFile(carpetaB + "peonBlanco.png"),
-            Image.FromFile(carpetaB + "caballoBlanco.png"),
-            Image.FromFile(carpetaB + "alfilBlanco.png"),
-            Image.FromFile(carpetaB + "torreBlanco.png"),
-            Image.FromFile(carpetaB + "reinaBlanca.png"),
-            Image.FromFile(carpetaB + "reyBlanco.png") 
-            };
+            blancas = loaderImage.GetBlancas().ToList();
             //Negras
-            negras = new List<Image>()
-            {
-            Image.FromFile(carpetaN + "peonNegro.png"),
-            Image.FromFile(carpetaN + "caballoNegro.png"),
-            Image.FromFile(carpetaN + "alfilNegro.png"),
-            Image.FromFile(carpetaN + "torreNegro.png"),
-            Image.FromFile(carpetaN + "reinaNegra.png"),
-            Image.FromFile(carpetaN + "reyNegro.png")
-            };
+            negras = loaderImage.GetNegras().ToList();
         }
+
         #endregion
 
 
         #region CrearTablero
+
         private void CrearTablero(int size, int rows, int cols)
         {
             for (int i = 0; i < rows; i++)
@@ -76,29 +64,34 @@ namespace Ajedrez
                     pb.Size = new Size(size, size); // Asignar el tamaño
                     pb.Location = new Point(j * size, i * size); // Asignar la ubicación
                     if ((i + j) % 2 == 0)
-                    { // Si la suma de la fila y la columna es par
+                    {
+                        // Si la suma de la fila y la columna es par
                         pb.BackColor = Color.FromArgb(106, 117, 136); // Asignar el color negro
                         pb.Name = "Blanco";
                     }
                     else
-                    { // Si la suma de la fila y la columna es impar
+                    {
+                        // Si la suma de la fila y la columna es impar
                         pb.BackColor = Color.FromArgb(42, 49, 62); // Asignar el color blanco
                         pb.Name = "Negro";
                     }
+
                     pb.Click += PictureBox_Click;
                     Tablero.Controls.Add(pb); // Añadir el PictureBox al panel
                     mapaDelTablero[i, j] = new Piezas(pb);
-
                 }
             }
+
             OrdenarPiezas();
             Tablero.Location = new Point((Width - Tablero.Width) / 2, (Height - Tablero.Height) / 2);
             Tablero.Visible = true;
         }
+
         #endregion
 
-        
+
         #region PictureBoxClick
+
         private void PictureBox_Click(object sender, EventArgs e)
         {
             PictureBox pb = (PictureBox)sender;
@@ -115,7 +108,8 @@ namespace Ajedrez
                 DevolverColorALosPictureBox();
                 if (MoverPieza(i, j))
                 {
-                    CambiarColor(ultimoMovimiento, ColorNegro, ColorBlanco); //Si se mueve una pieza colorea el movimiento hecho
+                    CambiarColor(ultimoMovimiento, ColorNegro,
+                        ColorBlanco); //Si se mueve una pieza colorea el movimiento hecho
                     return;
                 }
             }
@@ -124,15 +118,19 @@ namespace Ajedrez
 
             switch (mapaDelTablero[i, j].TipoPieza)
             {
-                case 0: PosiblesMovimientosDelPeon(i, j);
+                case 0:
+                    PosiblesMovimientosDelPeon(i, j);
                     break;
             }
+
             PiezaClickeada = true;
         }
+
         #endregion
 
 
         #region MoverPieza
+
         private bool MoverPieza(int i, int j)
         {
             foreach (Point temporal in temporalDeClick)
@@ -148,7 +146,8 @@ namespace Ajedrez
                         tempPieza.TipoPieza = -1;
                     }
 
-                    mapaDelTablero[i, j].PictureBox.Image = mapaDelTablero[tempPiezaClick.X, tempPiezaClick.Y].PictureBox.Image;
+                    mapaDelTablero[i, j].PictureBox.Image =
+                        mapaDelTablero[tempPiezaClick.X, tempPiezaClick.Y].PictureBox.Image;
                     mapaDelTablero[i, j].PictureBox = mapaDelTablero[tempPiezaClick.X, tempPiezaClick.Y].PictureBox;
                     mapaDelTablero[i, j] = mapaDelTablero[tempPiezaClick.X, tempPiezaClick.Y];
 
@@ -161,17 +160,20 @@ namespace Ajedrez
                     jugadorActual = jugadorActual == 0 ? 1 : 0;
 
                     CambiarMovimientoAColorear(i, j);
-                    
+
                     return true;
                 }
             }
+
             temporalDeClick.Clear();
             return false;
         }
+
         #endregion
 
 
         #region CambiarMovimientoAColores
+
         private void CambiarMovimientoAColorear(int i, int j)
         {
             CambiarColor(ultimoMovimiento, ColorNegroSuave, ColorBlancoSuave);
@@ -179,11 +181,13 @@ namespace Ajedrez
             ultimoMovimiento.Add(new Point(i, j));
             ultimoMovimiento.Add(new Point(tempPiezaClick.X, tempPiezaClick.Y));
         }
+
         #endregion
 
 
         #region CambiarColor
-        private void CambiarColor(List<Point>lista, Color negro, Color blanco)
+
+        private void CambiarColor(List<Point> lista, Color negro, Color blanco)
         {
             foreach (Point temporal in lista)
             {
@@ -197,19 +201,23 @@ namespace Ajedrez
                 }
             }
         }
+
         #endregion
 
 
         #region DevolverColorALosPictureBox
+
         private void DevolverColorALosPictureBox()
         {
             CambiarColor(temporalDeClick, ColorNegroSuave, ColorBlancoSuave);
             PiezaClickeada = false;
         }
+
         #endregion
 
-        
+
         #region PosiblesMovimientosDelPeon
+
         private void PosiblesMovimientosDelPeon(int i, int j)
         {
             if (i == 0 || i == 7) return;
@@ -230,33 +238,40 @@ namespace Ajedrez
                     temporalDeClick.Add(new Point(i + p * condicion, j));
                 }
             }
+
             tempPiezaClick = new Point(i, j);
             ComprobarSiPeonPuedeComer(i, j, condicion);
         }
+
         #endregion
 
 
         #region ComprobarSiPeonPuedeComer
+
         private void ComprobarSiPeonPuedeComer(int i, int j, int condicion) // Este metodo decide que opcion usar.
         {
             if (i == 0 || i == 7) return;
             if (j == 0)
             {
-                ComprobarSiHayPiezasComestibles(i, j+1, j, condicion);
+                ComprobarSiHayPiezasComestibles(i, j + 1, j, condicion);
                 return;
             }
-            if(j == 7)
+
+            if (j == 7)
             {
                 ComprobarSiHayPiezasComestibles(i, j - 1, j, condicion);
                 return;
             }
+
             ComprobarSiHayPiezasComestibles(i, j + 1, j, condicion);
             ComprobarSiHayPiezasComestibles(i, j - 1, j, condicion);
         }
+
         #endregion
 
 
         #region ComprobarSiHayPiezasComestibles
+
         private void ComprobarSiHayPiezasComestibles(int i, int x, int j, int condicion)
         {
             if (mapaDelTablero[i + condicion, x].TipoPieza == -1) return;
@@ -266,10 +281,12 @@ namespace Ajedrez
             pictureBox.BackColor = pictureBox.Name == "Negro" ? ColorNegro : ColorBlanco;
             temporalDeClick.Add(new Point(i + condicion, x));
         }
+
         #endregion
 
 
         #region OrdenarPiezas
+
         private void OrdenarPiezas()
         {
             //Peones
@@ -284,6 +301,7 @@ namespace Ajedrez
                 mapaDelTablero[6, j].Color = 0;
                 mapaDelTablero[6, j].MovimientoEspecial = true;
             }
+
             //Torres
             mapaDelTablero[0, 0].PictureBox.Image = blancas[3];
             mapaDelTablero[0, 0].TipoPieza = 3;
@@ -343,6 +361,7 @@ namespace Ajedrez
             mapaDelTablero[7, 4].TipoPieza = 4;
             mapaDelTablero[7, 4].Color = 0;
         }
+
         #endregion
     }
 }
