@@ -117,12 +117,39 @@ namespace UnitTestProject1
             tablero.SetPieza(peonAMover, coordenadaPeonAMover);
             tablero.SetPieza(peonEnemigo, coordenadaPeonEnemigo);
 
-            var coordenadasDondePuedecomer =
+            var coordenadasDondecomer =
                 logicGame.GetPosiblesMovimientosParaComer(coordenadaPeonAMover);
 
-            coordenadasDondePuedecomer.Count().Should().Be(2);
-            coordenadasDondePuedecomer[0].X.Should().Be(2);
-            coordenadasDondePuedecomer[0].Y.Should().Be(2);
+            coordenadasDondecomer.Count().Should().Be(2);
+            coordenadasDondecomer[0].X.Should().Be(2);
+            coordenadasDondecomer[0].Y.Should().Be(2);
+        }
+
+        [TestMethod]
+        public void PeonNoDebeComerSiPuede2Posibilidades()
+        {
+            var logicGame = new LogicGame();
+            var tablero = new Tablero(8, 8);
+
+            var peonAMover = new Piezas(null, TipoDePieza.Peon);
+            var peonEnemigo = new Piezas(null, TipoDePieza.Peon);
+            var peonEnemigo2 = new Piezas(null, TipoDePieza.Peon);
+            var coordenadaPeonAMover = new Coordenada(1, 1);
+            var coordenadaPeonEnemigo = new Coordenada(2, 2);
+            var coordenadaPeonEnemigo2 = new Coordenada(2, 0);
+
+            tablero.SetPieza(peonAMover, coordenadaPeonAMover);
+            tablero.SetPieza(peonEnemigo, coordenadaPeonEnemigo);
+            tablero.SetPieza(peonEnemigo2, coordenadaPeonEnemigo2);
+
+            Coordenada[] coordenadasDondecomer =
+                logicGame.GetPosiblesMovimientosParaComer(coordenadaPeonAMover);
+
+            coordenadasDondecomer.Count().Should().Be(2);
+            coordenadasDondecomer[0].X.Should().Be(2);
+            coordenadasDondecomer[0].Y.Should().Be(2);
+            coordenadasDondecomer[1].X.Should().Be(2);
+            coordenadasDondecomer[1].Y.Should().Be(0);
         }
     }
 }
