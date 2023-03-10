@@ -30,29 +30,29 @@ public class TableroDefault
     }
 
     private void SetPeones()
-        => _casillas.Where(j => j.Fila == filaPeones).ToList().ForEach(j => j.Pieza = _builderPiezaBlanca.Peones);
+        => _casillas.Where(j => j.Coordenada.Y == filaPeones).ToList().ForEach(j => j.Pieza = _builderPiezaBlanca.Peones);
 
     private void SetTorres()
-        => _casillas.Where(j => j.Fila == filaNoPeones && j.Columna == 0 || j.Fila == filaNoPeones && j.Columna == 7)
+        => _casillas.Where(j => j.Coordenada.Y == filaNoPeones && j.Coordenada.X == 0 || j.Coordenada.Y == filaNoPeones && j.Coordenada.X == 7)
             .ToList()
             .ForEach(j => j.Pieza = _builderPiezaBlanca.Torres);
 
     private void SetCaballo()
-        => _casillas.Where(j => j.Fila == filaNoPeones && j.Columna == 1 || j.Fila == filaNoPeones && j.Columna == 6)
+        => _casillas.Where(j => j.Coordenada.Y == filaNoPeones && j.Coordenada.X == 1 || j.Coordenada.Y == filaNoPeones && j.Coordenada.X == 6)
             .ToList()
             .ForEach(j => j.Pieza = _builderPiezaBlanca.Caballo);
 
     private void SetAlfil()
-        => _casillas.Where(j => j.Fila == filaNoPeones && j.Columna == 2 || j.Fila == filaNoPeones && j.Columna == 5)
+        => _casillas.Where(j => j.Coordenada.Y == filaNoPeones && j.Coordenada.X == 2 || j.Coordenada.Y == filaNoPeones && j.Coordenada.X == 5)
             .ToList()
             .ForEach(j => j.Pieza = _builderPiezaBlanca.Alfil);
 
     private void SetReina()
-        => _casillas.Where(j => j.Fila == filaNoPeones && j.Columna == 3).ToList()
+        => _casillas.Where(j => j.Coordenada.Y == filaNoPeones && j.Coordenada.X == 3).ToList()
             .ForEach(j => j.Pieza = _builderPiezaBlanca.Reina);
 
     private void SetRey()
-        => _casillas.Where(j => j.Fila == filaNoPeones && j.Columna == 4).ToList()
+        => _casillas.Where(j => j.Coordenada.Y == filaNoPeones && j.Coordenada.X == 4).ToList()
             .ForEach(j => j.Pieza = _builderPiezaBlanca.Rey);
 
     public void SetPiezasToCasillas()

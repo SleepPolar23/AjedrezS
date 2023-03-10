@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\BuilderPictureBox.cs" />
+    <Compile Include="Controller\LogicGame.cs" />
     <Compile Include="Domain\Casilla.cs" />
     <Compile Include="Domain\ColorCasilla.cs" />
     <Compile Include="Domain\Coordenada.cs" />

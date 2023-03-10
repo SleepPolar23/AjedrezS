@@ -42,7 +42,7 @@ public class BuilderPictureBox
     public PictureBox Build(Label label)
     {
         _pictureBox.Size = new Size(size, size);
-        _pictureBox.Location = new Point(_casilla.Columna * size, _casilla.Fila * size);
+        _pictureBox.Location = new Point(_casilla.Coordenada.X * size, _casilla.Coordenada.Y * size);
 
         if (_casilla.ColorCasilla == ColorCasilla.Blanco) SetColorBlanco();
         else SetColorNegro();
@@ -50,7 +50,7 @@ public class BuilderPictureBox
         _pictureBox.Image = _casilla.Pieza?._image;
         _pictureBox.MouseHover += (sender, args) =>
         {
-            label.Text = $"X = {_casilla.Columna}, Y = {_casilla.Fila}";
+            label.Text = $"X = {_casilla.Coordenada.X}, Y = {_casilla.Coordenada.Y}";
         };
 
         return _pictureBox;
