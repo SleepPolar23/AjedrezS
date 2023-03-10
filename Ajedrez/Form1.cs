@@ -32,7 +32,7 @@ public partial class Ajedrez : Form
                 .WithSize(size)
                 //.WithAction(PictureBox_Click)
                 .ToCasilla(tableroCasilla)
-                .Build();
+                .Build(label1);
 
             Tablero.Controls.Add(pb); // Añadir el PictureBox al panel
         }
