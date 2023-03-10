@@ -50,11 +50,13 @@
     <Compile Include="Controller\BuilderPictureBox.cs" />
     <Compile Include="Domain\Casilla.cs" />
     <Compile Include="Domain\ColorCasilla.cs" />
+    <Compile Include="Domain\Coordenada.cs" />
     <Compile Include="Domain\Game.cs" />
     <Compile Include="Domain\LoaderImage.cs" />
     <Compile Include="Domain\PiezasFactory.cs" />
     <Compile Include="Domain\Tablero.cs" />
     <Compile Include="Domain\TableroDefault.cs" />
+    <Compile Include="Domain\TipoDePieza.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

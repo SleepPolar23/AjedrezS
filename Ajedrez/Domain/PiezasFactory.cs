@@ -15,12 +15,12 @@ public class PiezasFactory
     }
 
 
-    public Piezas Caballo => new Piezas(_piezasImage.ElementAt(1));
-    public Piezas Peones => new Piezas(_piezasImage.ElementAt(0));
-    public Piezas Torres => new Piezas(_piezasImage.ElementAt(3));
-    public Piezas Alfil => new Piezas(_piezasImage.ElementAt(2));
-    public Piezas Reina => new Piezas(_piezasImage.ElementAt(4));
-    public Piezas Rey => new Piezas(_piezasImage.ElementAt(5));
+    public Piezas Caballo => new Piezas(_piezasImage.ElementAt(1), TipoDePieza.Caballo);
+    public Piezas Peones => new Piezas(_piezasImage.ElementAt(0), TipoDePieza.Peon);
+    public Piezas Torres => new Piezas(_piezasImage.ElementAt(3),TipoDePieza.Torre);
+    public Piezas Alfil => new Piezas(_piezasImage.ElementAt(2), TipoDePieza.Alfil);
+    public Piezas Reina => new Piezas(_piezasImage.ElementAt(4), TipoDePieza.Reina);
+    public Piezas Rey => new Piezas(_piezasImage.ElementAt(5), TipoDePieza.Rey);
 
 
     public class Builder
