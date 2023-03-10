@@ -1,8 +1,8 @@
 #nullable enable
 using System.Collections.Generic;
-using System.Linq;
+using Ajedrez.Controller;
 
-namespace Ajedrez.Controller;
+namespace Ajedrez.Domain;
 
 public class Tablero
 {

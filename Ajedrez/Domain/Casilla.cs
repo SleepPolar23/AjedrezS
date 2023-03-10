@@ -1,7 +1,8 @@
 #nullable enable
 using System;
+using Ajedrez.Controller;
 
-namespace Ajedrez.Controller;
+namespace Ajedrez.Domain;
 
 public class Casilla
 {

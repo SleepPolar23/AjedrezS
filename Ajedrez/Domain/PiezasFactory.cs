@@ -1,8 +1,9 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using Ajedrez.Controller;
 
-namespace Ajedrez.Controller;
+namespace Ajedrez.Domain;
 
 public class PiezasFactory
 {
