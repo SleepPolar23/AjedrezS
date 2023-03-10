@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Reflection;
 using System.Windows.Forms;
 using Ajedrez.Controller;
+using Ajedrez.Domain;
 
 
 namespace Ajedrez;
@@ -12,10 +10,9 @@ namespace Ajedrez;
 public partial class Ajedrez : Form
 {
     private bool PiezaClickeada;
-    List<Point> temporalDeClick = new List<Point>();
-    List<Point> ultimoMovimiento = new List<Point>();
     Point tempPiezaClick;
     int jugadorActual = 0;
+    private Tablero _tablero;
 
 
     public Ajedrez()
@@ -28,14 +25,14 @@ public partial class Ajedrez : Form
 
     private void CrearTablero(int size, int rows, int cols)
     {
-        var tablero = new Tablero(rows, rows);
-        foreach (var tableroCasilla in tablero.Casillas)
+        _tablero = new Tablero(rows, rows);
+        foreach (var tableroCasilla in _tablero.Casillas)
         {
             var pb = BuilderPictureBox.Create()
                 .WithSize(size)
                 //.WithAction(PictureBox_Click)
                 .ToCasilla(tableroCasilla)
-                .Build();
+                .Build(label1);
 
             Tablero.Controls.Add(pb); // Añadir el PictureBox al panel
         }
@@ -44,7 +41,6 @@ public partial class Ajedrez : Form
         Tablero.Visible = true;
     }
 
-    #region CrearTablero
 
     /*
     #region PictureBoxClick
@@ -239,88 +235,5 @@ public partial class Ajedrez : Form
         temporalDeClick.Add(new Point(i + condicion, x));
     }
 
-    #endregion
-
-
-    #region OrdenarPiezas
-
-    private void OrdenarPiezas()
-    {
-        //Peones
-        for (int j = 0; j < 8; j++)
-        {
-            mapaDelTablero[1, j].PictureBox.Image = blancas[0];
-            mapaDelTablero[1, j].TipoPieza = 0;
-            mapaDelTablero[1, j].Color = 1;
-            mapaDelTablero[1, j].MovimientoEspecial = true;
-            mapaDelTablero[6, j].PictureBox.Image = negras[0];
-            mapaDelTablero[6, j].TipoPieza = 0;
-            mapaDelTablero[6, j].Color = 0;
-            mapaDelTablero[6, j].MovimientoEspecial = true;
-        }
-
-        //Torres
-        mapaDelTablero[0, 0].PictureBox.Image = blancas[3];
-        mapaDelTablero[0, 0].TipoPieza = 3;
-        mapaDelTablero[0, 0].Color = 1;
-        mapaDelTablero[0, 7].PictureBox.Image = blancas[3];
-        mapaDelTablero[0, 7].TipoPieza = 3;
-        mapaDelTablero[0, 7].Color = 1;
-
-        mapaDelTablero[7, 0].PictureBox.Image = negras[3];
-        mapaDelTablero[7, 0].TipoPieza = 3;
-        mapaDelTablero[7, 0].Color = 0;
-        mapaDelTablero[7, 7].PictureBox.Image = negras[3];
-        mapaDelTablero[7, 7].TipoPieza = 3;
-        mapaDelTablero[7, 7].Color = 0;
-        //Caballos
-        mapaDelTablero[0, 1].PictureBox.Image = blancas[1];
-        mapaDelTablero[0, 1].TipoPieza = 1;
-        mapaDelTablero[0, 1].Color = 1;
-        mapaDelTablero[0, 6].PictureBox.Image = blancas[1];
-        mapaDelTablero[0, 6].TipoPieza = 1;
-        mapaDelTablero[0, 6].Color = 1;
-
-        mapaDelTablero[7, 1].PictureBox.Image = negras[1];
-        mapaDelTablero[7, 6].PictureBox.Image = negras[1];
-        mapaDelTablero[7, 1].TipoPieza = 1;
-        mapaDelTablero[7, 6].TipoPieza = 1;
-        mapaDelTablero[7, 1].Color = 0;
-        mapaDelTablero[7, 6].Color = 0;
-        //Alfiles
-        mapaDelTablero[0, 2].PictureBox.Image = blancas[2];
-        mapaDelTablero[0, 2].TipoPieza = 2;
-        mapaDelTablero[0, 2].Color = 1;
-        mapaDelTablero[0, 5].PictureBox.Image = blancas[2];
-        mapaDelTablero[0, 5].TipoPieza = 2;
-        mapaDelTablero[0, 5].Color = 1;
-
-        mapaDelTablero[7, 2].PictureBox.Image = negras[2];
-        mapaDelTablero[7, 2].TipoPieza = 2;
-        mapaDelTablero[7, 2].Color = 0;
-        mapaDelTablero[7, 5].PictureBox.Image = negras[2];
-        mapaDelTablero[7, 5].TipoPieza = 2;
-        mapaDelTablero[7, 5].Color = 0;
-        //Reinas
-        mapaDelTablero[0, 3].PictureBox.Image = blancas[4];
-        mapaDelTablero[0, 3].TipoPieza = 3;
-        mapaDelTablero[0, 3].Color = 1;
-
-        mapaDelTablero[7, 3].PictureBox.Image = negras[4];
-        mapaDelTablero[7, 3].TipoPieza = 3;
-        mapaDelTablero[7, 3].Color = 0;
-        //Reyes
-        mapaDelTablero[0, 4].PictureBox.Image = blancas[5];
-        mapaDelTablero[0, 4].TipoPieza = 4;
-        mapaDelTablero[0, 4].Color = 1;
-
-        mapaDelTablero[7, 4].PictureBox.Image = negras[5];
-        mapaDelTablero[7, 4].TipoPieza = 4;
-        mapaDelTablero[7, 4].Color = 0;
-    }
-
-    #endregion
 */
-
-    #endregion
 }

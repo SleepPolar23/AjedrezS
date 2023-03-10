@@ -1,6 +1,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Ajedrez.Domain;
 
 namespace Ajedrez.Controller;
 
@@ -38,7 +39,7 @@ public class BuilderPictureBox
         return this;
     }
 
-    public PictureBox Build()
+    public PictureBox Build(Label label)
     {
         _pictureBox.Size = new Size(size, size);
         _pictureBox.Location = new Point(_casilla.Columna * size, _casilla.Fila * size);
@@ -47,6 +48,10 @@ public class BuilderPictureBox
         else SetColorNegro();
 
         _pictureBox.Image = _casilla.Pieza?._image;
+        _pictureBox.MouseHover += (sender, args) =>
+        {
+            label.Text = $"X = {_casilla.Columna}, Y = {_casilla.Fila}";
+        };
 
         return _pictureBox;
     }

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Ajedrez.Controller;
+namespace Ajedrez.Domain;
 
 public class TableroDefault
 {

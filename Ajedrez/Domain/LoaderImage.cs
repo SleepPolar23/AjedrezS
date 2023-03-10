@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 
-namespace Ajedrez.Controller;
+namespace Ajedrez.Domain;
 
 public class LoaderImage
 {

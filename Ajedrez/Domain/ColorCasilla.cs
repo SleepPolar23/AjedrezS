@@ -1,5 +1,5 @@
 #nullable enable
-namespace Ajedrez.Controller;
+namespace Ajedrez.Domain;
 
 public enum ColorCasilla
 {
