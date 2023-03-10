@@ -9,3 +9,49 @@ C:\Users\Cristian\source\repos\Ajedrez5\Ajedrez\obj\Release\Ajedrez.csproj.Gener
 C:\Users\Cristian\source\repos\Ajedrez5\Ajedrez\obj\Release\Ajedrez.csproj.CoreCompileInputs.cache
 C:\Users\Cristian\source\repos\Ajedrez5\Ajedrez\obj\Release\Ajedrez.exe
 C:\Users\Cristian\source\repos\Ajedrez5\Ajedrez\obj\Release\Ajedrez.pdb
+C:\Users\Cristian\source\repos\AjedrezS-main\Ajedrez\bin\Release\Piezas\Piezas Blancas\alfilBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS-main\Ajedrez\bin\Release\Piezas\Piezas Blancas\caballoBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS-main\Ajedrez\bin\Release\Piezas\Piezas Blancas\peonBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS-main\Ajedrez\bin\Release\Piezas\Piezas Blancas\reinaBlanca.png
+C:\Users\Cristian\source\repos\AjedrezS-main\Ajedrez\bin\Release\Piezas\Piezas Blancas\reyBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS-main\Ajedrez\bin\Release\Piezas\Piezas Blancas\torreBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS-main\Ajedrez\bin\Release\Piezas\Piezas Negras\alfilNegro.png
+C:\Users\Cristian\source\repos\AjedrezS-main\Ajedrez\bin\Release\Piezas\Piezas Negras\caballoNegro.png
+C:\Users\Cristian\source\repos\AjedrezS-main\Ajedrez\bin\Release\Piezas\Piezas Negras\peonNegro.png
+C:\Users\Cristian\source\repos\AjedrezS-main\Ajedrez\bin\Release\Piezas\Piezas Negras\reinaNegra.png
+C:\Users\Cristian\source\repos\AjedrezS-main\Ajedrez\bin\Release\Piezas\Piezas Negras\reyNegro.png
+C:\Users\Cristian\source\repos\AjedrezS-main\Ajedrez\bin\Release\Piezas\Piezas Negras\torreNegro.png
+C:\Users\Cristian\source\repos\AjedrezS-main\Ajedrez\bin\Release\Ajedrez.exe.config
+C:\Users\Cristian\source\repos\AjedrezS-main\Ajedrez\bin\Release\Ajedrez.exe
+C:\Users\Cristian\source\repos\AjedrezS-main\Ajedrez\bin\Release\Ajedrez.pdb
+C:\Users\Cristian\source\repos\AjedrezS-main\Ajedrez\obj\Release\Ajedrez.csproj.AssemblyReference.cache
+C:\Users\Cristian\source\repos\AjedrezS-main\Ajedrez\obj\Release\Ajedrez.csproj.SuggestedBindingRedirects.cache
+C:\Users\Cristian\source\repos\AjedrezS-main\Ajedrez\obj\Release\Ajedrez.Ajedrez.resources
+C:\Users\Cristian\source\repos\AjedrezS-main\Ajedrez\obj\Release\Ajedrez.Properties.Resources.resources
+C:\Users\Cristian\source\repos\AjedrezS-main\Ajedrez\obj\Release\Ajedrez.csproj.GenerateResource.cache
+C:\Users\Cristian\source\repos\AjedrezS-main\Ajedrez\obj\Release\Ajedrez.csproj.CoreCompileInputs.cache
+C:\Users\Cristian\source\repos\AjedrezS-main\Ajedrez\obj\Release\Ajedrez.exe
+C:\Users\Cristian\source\repos\AjedrezS-main\Ajedrez\obj\Release\Ajedrez.pdb
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\bin\Release\Piezas\Piezas Blancas\alfilBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\bin\Release\Piezas\Piezas Blancas\caballoBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\bin\Release\Piezas\Piezas Blancas\peonBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\bin\Release\Piezas\Piezas Blancas\reinaBlanca.png
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\bin\Release\Piezas\Piezas Blancas\reyBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\bin\Release\Piezas\Piezas Blancas\torreBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\bin\Release\Piezas\Piezas Negras\alfilNegro.png
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\bin\Release\Piezas\Piezas Negras\caballoNegro.png
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\bin\Release\Piezas\Piezas Negras\peonNegro.png
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\bin\Release\Piezas\Piezas Negras\reinaNegra.png
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\bin\Release\Piezas\Piezas Negras\reyNegro.png
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\bin\Release\Piezas\Piezas Negras\torreNegro.png
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\bin\Release\Ajedrez.exe.config
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\bin\Release\Ajedrez.exe
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\bin\Release\Ajedrez.pdb
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\obj\Release\Ajedrez.csproj.AssemblyReference.cache
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\obj\Release\Ajedrez.csproj.SuggestedBindingRedirects.cache
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\obj\Release\Ajedrez.Ajedrez.resources
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\obj\Release\Ajedrez.Properties.Resources.resources
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\obj\Release\Ajedrez.csproj.GenerateResource.cache
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\obj\Release\Ajedrez.csproj.CoreCompileInputs.cache
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\obj\Release\Ajedrez.exe
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\obj\Release\Ajedrez.pdb
