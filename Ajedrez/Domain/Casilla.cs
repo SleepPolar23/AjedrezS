@@ -7,11 +7,11 @@ namespace Ajedrez.Domain;
 public class Casilla
 {
     public ColorCasilla ColorCasilla { get; set; }
-    public int Fila { get; set; }
-    public int Columna { get; set; }
+    public Coordenada Coordenada { get; set; }
+
     public Piezas? Pieza { get; set; }
 
-    public Casilla(int color, int fila, int columna)
+	public Casilla(int color, int fila, int columna)
     {
         if (Enum.TryParse<ColorCasilla>(color.ToString(), out var colorEnum))
         {
@@ -22,7 +22,6 @@ public class Casilla
             throw new Exception("No se pudo convertir el color");
         }
 
-        Fila = fila;
-        Columna = columna;
+        Coordenada = new Coordenada(fila, columna);
     }
 }
