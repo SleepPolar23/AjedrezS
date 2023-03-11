@@ -26,6 +26,11 @@ public class LogicGame
     {
         // si en los posibles movimientos existe una fisha, entonces se lo puede comer
         var posiblesMovs = GetPosiblesMovsDondeCome(tablero.GetPieza(coordenadaPeonAMover), coordenadaPeonAMover);
-        return posiblesMovs.Where(mov => tablero.GetPieza(mov) != null).ToArray();
+        return posiblesMovs.Where(mov =>
+        {
+            var piezaDondeIntersectara = tablero.GetPieza(mov);
+            var piezaSeleccionadaAMover = tablero.GetPieza(coordenadaPeonAMover);
+            return piezaDondeIntersectara != null && piezaDondeIntersectara._equipo != piezaSeleccionadaAMover?._equipo;
+        }).ToArray();
     }
 }

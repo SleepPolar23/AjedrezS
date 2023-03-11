@@ -7,7 +7,7 @@ namespace Ajedrez
     public class Piezas
     {
         private TipoDePieza _tipoPieza;
-        private Equipo _equipo;
+        public Equipo _equipo { get; }
         private bool _movimientoEspecial;
         public Image _image;
 

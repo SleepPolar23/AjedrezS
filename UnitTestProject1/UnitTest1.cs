@@ -171,15 +171,12 @@ namespace UnitTestProject1
             tablero.SetPieza(peonAMover, coordenadaPeonAMover);
             tablero.SetPieza(peonAliado, coordenadaPeonAliado);
 
-            var posiblesMovs = logicGame.GetPosibleMovs(peonAMover, coordenadaPeonAMover);
-            // le consulto al logic game que me diga si puedo moverme a la coordenada 1, 2
-            var movSelected = posiblesMovs[0];
-
             Coordenada[] coordenadasDondecomer =
                 logicGame.GetPosiblesMovimientosParaComer(tablero, coordenadaPeonAMover);
 
             coordenadasDondecomer.Length.Should().Be(0);
             coordenadasDondecomer.Should().NotContainEquivalentOf(new Coordenada(2, 2));
         }
+        
     }
 }
