@@ -54,4 +54,11 @@ public class Tablero
         // asigna la pieza
         casillaMov.Pieza = pieza;
     }
+
+    public Piezas? GetPieza(Coordenada coordenadaPeonAMover)
+    {
+        // busca la casilla que coincida con la coordenada
+        var casilla = Casillas.First(j => j.Coordenada.X == coordenadaPeonAMover.X && j.Coordenada.Y == coordenadaPeonAMover.Y);
+        return casilla.Pieza;
+    }
 }

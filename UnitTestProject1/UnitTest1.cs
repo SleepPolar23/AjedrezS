@@ -3,6 +3,7 @@ using Ajedrez.Domain;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Ajedrez.Controller;
 
@@ -75,12 +76,8 @@ namespace UnitTestProject1
         public void PeonSeMueveCorrectamente()
         {
             var peon = new Piezas(null, TipoDePieza.Peon);
-
-            peon.Movimientos[0].X.Should().Be(0);
-            peon.Movimientos[0].Y.Should().Be(1);
-
-            peon.Movimientos[1].X.Should().Be(0);
-            peon.Movimientos[1].Y.Should().Be(2);
+            peon.Movimientos.Should().ContainEquivalentOf(new Coordenada(0, 1));
+            peon.Movimientos.Should().ContainEquivalentOf(new Coordenada(0, 2));
         }
 
         [TestMethod]
@@ -102,6 +99,62 @@ namespace UnitTestProject1
 
             var puedo = logicGame.PuedoMoverme(movSelected, tablero);
             puedo.Should().BeFalse();
+        }
+
+        [TestMethod]
+        public void PeonGetMovsDondeCome()
+        {
+            var peon = new Piezas(null, TipoDePieza.Peon);
+            
+            peon.MovimientosDondeCome.Should().ContainEquivalentOf(new Coordenada(1, 1));
+            peon.MovimientosDondeCome.Should().ContainEquivalentOf(new Coordenada(-1, 1));
+        }
+
+        [TestMethod]
+        public void PeonDebeComerSiPuede()
+        {
+            var logicGame = new LogicGame();
+            var tablero = new Tablero(8, 8);
+            var peonAMover = new Piezas(null, TipoDePieza.Peon);
+            var peonEnemigo = new Piezas(null, TipoDePieza.Peon);
+            var coordenadaPeonAMover = new Coordenada(1, 1);
+            var coordenadaPeonEnemigo = new Coordenada(2, 2);
+
+            tablero.SetPieza(peonAMover, coordenadaPeonAMover);
+            tablero.SetPieza(peonEnemigo, coordenadaPeonEnemigo);
+
+            Coordenada[] coordenadasDondecomer = logicGame.GetPosiblesMovimientosParaComer(tablero, coordenadaPeonAMover);
+
+            coordenadasDondecomer.Count().Should().Be(1);
+            coordenadasDondecomer.Should().ContainEquivalentOf(new Coordenada(2, 2));
+        }
+
+        [TestMethod]
+        public void PeonNoDebeComerSiPuede2Posibilidades()
+        {
+            var logicGame = new LogicGame();
+            var tablero = new Tablero(8, 8);
+
+            var peonAMover = new Piezas(null, TipoDePieza.Peon);
+            var peonEnemigo = new Piezas(null, TipoDePieza.Peon);
+            var peonEnemigo2 = new Piezas(null, TipoDePieza.Peon);
+            var coordenadaPeonAMover = new Coordenada(1, 1);
+            var coordenadaPeonEnemigo = new Coordenada(2, 2);
+            var coordenadaPeonEnemigo2 = new Coordenada(0, 2);
+
+            tablero.SetPieza(peonAMover, coordenadaPeonAMover);
+            tablero.SetPieza(peonEnemigo, coordenadaPeonEnemigo);
+            tablero.SetPieza(peonEnemigo2, coordenadaPeonEnemigo2);
+
+            var posiblesMovs = logicGame.GetPosibleMovs(peonAMover, coordenadaPeonAMover);
+            // le consulto al logic game que me diga si puedo moverme a la coordenada 1, 2
+            var movSelected = posiblesMovs[0];
+
+            Coordenada[] coordenadasDondecomer =
+                logicGame.GetPosiblesMovimientosParaComer(tablero, coordenadaPeonAMover);
+
+            coordenadasDondecomer.Should().ContainEquivalentOf(new Coordenada(2, 2));
+            coordenadasDondecomer.Should().ContainEquivalentOf(new Coordenada(0, 2));
         }
     }
 }
