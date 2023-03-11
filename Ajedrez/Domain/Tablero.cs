@@ -1,7 +1,6 @@
 #nullable enable
 using System.Collections.Generic;
 using System.Linq;
-using Ajedrez.Controller;
 
 namespace Ajedrez.Domain;
 
@@ -45,6 +44,28 @@ public class Tablero
     {
         // busca la casilla que coincida con la coordenada
         var casilla = Casillas.First(j => j.Coordenada.X == coordenada.X && j.Coordenada.Y == coordenada.Y);
+        // asigna la pieza
+        var pieza = casilla.Pieza;
+        casilla.Pieza = null;
+
+        // busca la casilla que coincida con la coordenada
+        var casillaMov = Casillas.First(j => j.Coordenada.X == movSelected.X && j.Coordenada.Y == movSelected.Y);
+        // asigna la pieza
+        casillaMov.Pieza = pieza;
+    }
+
+    public Piezas? GetPieza(Coordenada coordenadaPeonAMover)
+    {
+        // busca la casilla que coincida con la coordenada
+        var casilla = Casillas.First(j =>
+            j.Coordenada.X == coordenadaPeonAMover.X && j.Coordenada.Y == coordenadaPeonAMover.Y);
+        return casilla.Pieza;
+    }
+
+    public void ComerPieza(Coordenada coordenadaSeleccionado, Coordenada movSelected)
+    {
+        // busca la casilla que coincida con la coordenada
+        var casilla = Casillas.First(j => j.Coordenada.X == coordenadaSeleccionado.X && j.Coordenada.Y == coordenadaSeleccionado.Y);
         // asigna la pieza
         var pieza = casilla.Pieza;
         casilla.Pieza = null;

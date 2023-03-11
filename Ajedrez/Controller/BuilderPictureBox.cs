@@ -47,6 +47,15 @@ public class BuilderPictureBox
         if (_casilla.ColorCasilla == ColorCasilla.Blanco) SetColorBlanco();
         else SetColorNegro();
 
+        if (_casilla.Estado == EstadoCasilla.Seleccionada)
+            SetColorSelected();
+
+        if (_casilla.Estado == EstadoCasilla.PosibleMovimiento)
+            _pictureBox.BackColor = Color.Blue;
+        
+        if (_casilla.Estado == EstadoCasilla.PosbileComer)
+            _pictureBox.BackColor = Color.Red;
+
         _pictureBox.Image = _casilla.Pieza?._image;
         _pictureBox.MouseHover += (sender, args) =>
         {
@@ -60,6 +69,12 @@ public class BuilderPictureBox
     {
         _pictureBox.BackColor = Color.FromArgb(106, 117, 136); // Asignar el color negro
         _pictureBox.Name = "Blanco";
+    }
+
+    private void SetColorSelected()
+    {
+        _pictureBox.BackColor = Color.Aquamarine;
+        _pictureBox.Name = "Blanco Seleccionado";
     }
 
     private void SetColorNegro()

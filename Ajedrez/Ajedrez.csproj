@@ -13,6 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -52,6 +53,7 @@
     <Compile Include="Domain\Casilla.cs" />
     <Compile Include="Domain\ColorCasilla.cs" />
     <Compile Include="Domain\Coordenada.cs" />
+    <Compile Include="Domain\Equipo.cs" />
     <Compile Include="Domain\Game.cs" />
     <Compile Include="Domain\LoaderImage.cs" />
     <Compile Include="Domain\PiezasFactory.cs" />

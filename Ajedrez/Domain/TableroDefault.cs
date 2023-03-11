@@ -58,10 +58,12 @@ public class TableroDefault
     public void SetPiezasToCasillas()
     {
         SetPeones();
+        /*
         SetTorres();
         SetCaballo();
         SetAlfil();
         SetReina();
         SetRey();
+        */
     }
 }
