@@ -17,8 +17,17 @@ public class LogicGame
     public Coordenada[] GetPosibleMovs(Piezas peon, Coordenada coordenada)
     {
         var movs = peon.Movimientos;
-        return movs.Select(mov => new Coordenada(coordenada.X + mov.X, coordenada.Y + mov.Y))
-            .Where(mov => mov.X < Columns && mov.Y < Rows).ToArray();
+        if (peon._equipo == Equipo.Blanco)
+        {
+            // Se mueven en positivo
+            return movs.Select(mov => new Coordenada(coordenada.X + mov.X, coordenada.Y + mov.Y))
+                .Where(mov => mov.X < Columns && mov.Y < Rows).ToArray();
+        }
+        else
+        {
+            return movs.Select(mov => new Coordenada(coordenada.X - mov.X, coordenada.Y - mov.Y))
+                .Where(mov => mov.X < Columns && mov.Y < Rows).ToArray();
+        }
     }
 
     public Coordenada[] GetPosiblesMovsDondeCome(Piezas peon, Coordenada coordenada)

@@ -230,13 +230,46 @@ namespace UnitTestProject1
             var peon = new Piezas(null, TipoDePieza.Peon, Equipo.Blanco);
             var coordenadaPeonSeleccionado = new Coordenada(7, 7);
             tablero.SetPieza(peon, coordenadaPeonSeleccionado);
-            
+
             var posiblesMovs = logicGame.GetPosibleMovs(peon, coordenadaPeonSeleccionado);
 
             posiblesMovs.Should().NotContainEquivalentOf(new Coordenada(7, 8));
             posiblesMovs.Should().NotContainEquivalentOf(new Coordenada(7, 9));
             posiblesMovs.Length.Should().Be(0);
-            
+        }
+
+        [TestMethod]
+        public void LosBlancosSeMuevenEnPositivo()
+        {
+            var logicGame = new LogicGame();
+            var tablero = new Tablero(8, 8);
+
+            var peon = new Piezas(null, TipoDePieza.Peon, Equipo.Blanco);
+            var coordenadaPeonSeleccionado = new Coordenada(1, 1);
+            tablero.SetPieza(peon, coordenadaPeonSeleccionado);
+
+            var posiblesMovs = logicGame.GetPosibleMovs(peon, coordenadaPeonSeleccionado);
+
+            posiblesMovs.Should().ContainEquivalentOf(new Coordenada(1, 2));
+            posiblesMovs.Should().ContainEquivalentOf(new Coordenada(1, 3));
+            posiblesMovs.Length.Should().Be(2);
+        }
+
+        [TestMethod]
+        public void LosNegrosSeMuevenEnNegativo()
+        {
+            var logicGame = new LogicGame();
+            var tablero = new Tablero(8, 8);
+
+            var peon = new Piezas(null, TipoDePieza.Peon, Equipo.Negro);
+            var coordenadaPeonSeleccionado = new Coordenada(3, 3);
+            tablero.SetPieza(peon, coordenadaPeonSeleccionado);
+
+            var posiblesMovs = logicGame.GetPosibleMovs(peon, coordenadaPeonSeleccionado);
+
+            posiblesMovs.Should().ContainEquivalentOf(new Coordenada(3, 2));
+            posiblesMovs.Should().ContainEquivalentOf(new Coordenada(3, 1));
+            posiblesMovs.Length.Should().Be(2);
         }
     }
 }

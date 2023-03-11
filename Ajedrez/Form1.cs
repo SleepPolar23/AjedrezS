@@ -55,7 +55,15 @@ public partial class Ajedrez : Form, ITableroObserver
             var pb = BuilderPictureBox.Create()
                 .WithSize(100)
                 //.WithAction(PictureBox_Click)
-                .WithAction((sender, args) => { _game.SetCasillaSeleccionada(casilla.Coordenada); })
+                .WithAction((sender, args) =>
+                {
+                    if (casilla.Estado == EstadoCasilla.Normal)
+                        _game.SetCasillaSeleccionada(casilla.Coordenada);
+                    if (casilla.Estado == EstadoCasilla.PosibleMovimiento)
+                        _game.MoverPieza(casilla.Coordenada);
+                    //if (casilla.Estado == EstadoCasilla.PosbileComer)
+                        //_game.ComerPieza(casilla.Coordenada);
+                })
                 .ToCasilla(casilla)
                 .Build(label1);
 

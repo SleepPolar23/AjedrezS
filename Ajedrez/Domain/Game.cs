@@ -55,13 +55,19 @@ public class Game
 
         // set casilla seleccionada
         CasillaSelected.Estado = EstadoCasilla.Seleccionada;
-        
+
         _observer?.TableroCambio(Tablero);
     }
 
     public void AddObserverTablero(ITableroObserver mockObject)
     {
-         _observer = mockObject;
+        _observer = mockObject;
+    }
+
+    public void MoverPieza(Coordenada coordenadaDestino)
+    {
+        Tablero.MovPieza(CasillaSelected.Coordenada, coordenadaDestino);
+        _observer?.TableroCambio(Tablero);
     }
 }
 
