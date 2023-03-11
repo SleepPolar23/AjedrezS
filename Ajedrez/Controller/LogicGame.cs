@@ -5,10 +5,20 @@ namespace Ajedrez.Controller;
 
 public class LogicGame
 {
+    public int Rows;
+    public int Columns;
+
+    public LogicGame()
+    {
+        Rows = 8;
+        Columns = 8;
+    }
+
     public Coordenada[] GetPosibleMovs(Piezas peon, Coordenada coordenada)
     {
         var movs = peon.Movimientos;
-        return movs.Select(mov => new Coordenada(coordenada.X + mov.X, coordenada.Y + mov.Y)).ToArray();
+        return movs.Select(mov => new Coordenada(coordenada.X + mov.X, coordenada.Y + mov.Y))
+            .Where(mov => mov.X < Columns && mov.Y < Rows).ToArray();
     }
 
     public Coordenada[] GetPosiblesMovsDondeCome(Piezas peon, Coordenada coordenada)

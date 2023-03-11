@@ -115,8 +115,8 @@ namespace UnitTestProject1
         {
             var logicGame = new LogicGame();
             var tablero = new Tablero(8, 8);
-            var peonAMover = new Piezas(null, TipoDePieza.Peon, default);
-            var peonEnemigo = new Piezas(null, TipoDePieza.Peon, default);
+            var peonAMover = new Piezas(null, TipoDePieza.Peon, Equipo.Blanco);
+            var peonEnemigo = new Piezas(null, TipoDePieza.Peon, Equipo.Negro);
             var coordenadaPeonAMover = new Coordenada(1, 1);
             var coordenadaPeonEnemigo = new Coordenada(2, 2);
 
@@ -219,6 +219,24 @@ namespace UnitTestProject1
             game.SetCasillaSeleccionada(coordenadaPeonSeleccionado);
 
             mock.Verify(j => j.TableroCambio(It.IsAny<Tablero>()), Times.Once);
+        }
+
+        [TestMethod]
+        public void LosMovimientosDebenEstarLimitadosPorElRangoDeMovimiento()
+        {
+            var logicGame = new LogicGame();
+            var tablero = new Tablero(8, 8);
+
+            var peon = new Piezas(null, TipoDePieza.Peon, Equipo.Blanco);
+            var coordenadaPeonSeleccionado = new Coordenada(7, 7);
+            tablero.SetPieza(peon, coordenadaPeonSeleccionado);
+            
+            var posiblesMovs = logicGame.GetPosibleMovs(peon, coordenadaPeonSeleccionado);
+
+            posiblesMovs.Should().NotContainEquivalentOf(new Coordenada(7, 8));
+            posiblesMovs.Should().NotContainEquivalentOf(new Coordenada(7, 9));
+            posiblesMovs.Length.Should().Be(0);
+            
         }
     }
 }

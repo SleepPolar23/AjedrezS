@@ -52,6 +52,9 @@ public class BuilderPictureBox
 
         if (_casilla.Estado == EstadoCasilla.PosibleMovimiento)
             _pictureBox.BackColor = Color.Blue;
+        
+        if (_casilla.Estado == EstadoCasilla.PosbileComer)
+            _pictureBox.BackColor = Color.Red;
 
         _pictureBox.Image = _casilla.Pieza?._image;
         _pictureBox.MouseHover += (sender, args) =>

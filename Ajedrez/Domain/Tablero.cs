@@ -1,7 +1,6 @@
 #nullable enable
 using System.Collections.Generic;
 using System.Linq;
-using Ajedrez.Controller;
 
 namespace Ajedrez.Domain;
 
@@ -61,11 +60,5 @@ public class Tablero
         var casilla = Casillas.First(j =>
             j.Coordenada.X == coordenadaPeonAMover.X && j.Coordenada.Y == coordenadaPeonAMover.Y);
         return casilla.Pieza;
-    }
-
-    public void SetCasillaSeleccionada(Coordenada coordenadaPeonSeleccionado)
-    {
-        // busca la casilla que coincida con la coordenada
-
     }
 }

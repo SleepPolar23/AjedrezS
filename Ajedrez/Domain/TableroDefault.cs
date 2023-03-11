@@ -13,7 +13,7 @@ public class TableroDefault
 
     public TableroDefault(ColorCasilla colorPlayer, IEnumerable<Casilla> casillas)
     {
-        filaPeones = colorPlayer == ColorCasilla.Blanco ? 3 : 4;
+        filaPeones = colorPlayer == ColorCasilla.Blanco ? 1 : 6;
         filaNoPeones = colorPlayer == ColorCasilla.Blanco ? 0 : 7;
 
         if (colorPlayer is ColorCasilla.Blanco)
