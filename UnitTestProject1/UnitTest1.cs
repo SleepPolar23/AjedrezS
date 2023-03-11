@@ -3,9 +3,9 @@ using Ajedrez.Domain;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using Ajedrez.Controller;
+using Moq;
 
 namespace UnitTestProject1
 {
@@ -16,7 +16,7 @@ namespace UnitTestProject1
         public void VerDondePuedoMoverLaPieza()
         {
             // necesto un game para poder mover la pieza
-            var game = new Game();
+            var game = new Game(new Tablero(8, 8));
             game.Tablero.SetPiezasToCasillasDefault();
 
             // en la vida real antes de que una persona mueva una pieza primero selecciona 
@@ -105,7 +105,7 @@ namespace UnitTestProject1
         public void PeonGetMovsDondeCome()
         {
             var peon = new Piezas(null, TipoDePieza.Peon, default);
-            
+
             peon.MovimientosDondeCome.Should().ContainEquivalentOf(new Coordenada(1, 1));
             peon.MovimientosDondeCome.Should().ContainEquivalentOf(new Coordenada(-1, 1));
         }
@@ -123,7 +123,8 @@ namespace UnitTestProject1
             tablero.SetPieza(peonAMover, coordenadaPeonAMover);
             tablero.SetPieza(peonEnemigo, coordenadaPeonEnemigo);
 
-            Coordenada[] coordenadasDondecomer = logicGame.GetPosiblesMovimientosParaComer(tablero, coordenadaPeonAMover);
+            Coordenada[] coordenadasDondecomer =
+                logicGame.GetPosiblesMovimientosParaComer(tablero, coordenadaPeonAMover);
 
             coordenadasDondecomer.Count().Should().Be(1);
             coordenadasDondecomer.Should().ContainEquivalentOf(new Coordenada(2, 2));
@@ -163,7 +164,7 @@ namespace UnitTestProject1
             var logicGame = new LogicGame();
             var tablero = new Tablero(8, 8);
 
-            var peonAMover = new Piezas(null, TipoDePieza.Peon,Equipo.Blanco );
+            var peonAMover = new Piezas(null, TipoDePieza.Peon, Equipo.Blanco);
             var peonAliado = new Piezas(null, TipoDePieza.Peon, Equipo.Blanco);
             var coordenadaPeonAMover = new Coordenada(1, 1);
             var coordenadaPeonAliado = new Coordenada(2, 2);
@@ -177,6 +178,47 @@ namespace UnitTestProject1
             coordenadasDondecomer.Length.Should().Be(0);
             coordenadasDondecomer.Should().NotContainEquivalentOf(new Coordenada(2, 2));
         }
-        
+
+        [TestMethod]
+        public void SiSeSeleccionaUnaPieza_CambiarElEstadoDeLasCasillasIndicandoLasPosibilidadesDeMovimiento()
+        {
+            var tablero = new Tablero(8, 8);
+
+            var peonAMover = new Piezas(null, TipoDePieza.Peon, Equipo.Blanco);
+            var coordenadaPeonSeleccionado = new Coordenada(1, 1);
+            tablero.SetPieza(peonAMover, coordenadaPeonSeleccionado);
+
+            var game = new Game(tablero);
+            game.SetCasillaSeleccionada(coordenadaPeonSeleccionado);
+
+            tablero.Casillas.Where(j => j.Coordenada.X == 1 && j.Coordenada.Y == 1).First()
+                .Estado.Should().Be(EstadoCasilla.Seleccionada);
+
+            tablero.Casillas.Where(j => j.Coordenada.X == 1 && j.Coordenada.Y == 2).First()
+                .Estado.Should().Be(EstadoCasilla.PosibleMovimiento);
+
+            tablero.Casillas.Where(j => j.Coordenada.X == 1 && j.Coordenada.Y == 3).First()
+                .Estado.Should().Be(EstadoCasilla.PosibleMovimiento);
+        }
+
+        [TestMethod]
+        public void NotificarAInterfazQueElEstadoDelTableroHaCambiadoParaPintar()
+        {
+            var tablero = new Tablero(8, 8);
+
+            var peonAMover = new Piezas(null, TipoDePieza.Peon, Equipo.Blanco);
+            var coordenadaPeonSeleccionado = new Coordenada(1, 1);
+            tablero.SetPieza(peonAMover, coordenadaPeonSeleccionado);
+
+            var game = new Game(tablero);
+            game.SetCasillaSeleccionada(coordenadaPeonSeleccionado);
+
+            var mock = new Mock<ITableroObserver>();
+            game.AddObserverTablero(mock.Object);
+
+            game.SetCasillaSeleccionada(coordenadaPeonSeleccionado);
+
+            mock.Verify(j => j.TableroCambio(It.IsAny<Tablero>()), Times.Once);
+        }
     }
 }

@@ -44,7 +44,17 @@ public class BuilderPictureBox
         _pictureBox.Size = new Size(size, size);
         _pictureBox.Location = new Point(_casilla.Coordenada.X * size, _casilla.Coordenada.Y * size);
 
-        if (_casilla.ColorCasilla == ColorCasilla.Blanco) SetColorBlanco();
+        if (_casilla.ColorCasilla == ColorCasilla.Blanco)
+        {
+            if (_casilla.Estado == EstadoCasilla.Seleccionada)
+                SetColorBlancoSelected();
+
+            if (_casilla.Estado == EstadoCasilla.Normal)
+                SetColorBlanco();
+            
+            if (_casilla.Estado == EstadoCasilla.PosibleMovimiento)
+                _pictureBox.BackColor = Color.Blue;
+        }
         else SetColorNegro();
 
         _pictureBox.Image = _casilla.Pieza?._image;
@@ -60,6 +70,12 @@ public class BuilderPictureBox
     {
         _pictureBox.BackColor = Color.FromArgb(106, 117, 136); // Asignar el color negro
         _pictureBox.Name = "Blanco";
+    }
+
+    private void SetColorBlancoSelected()
+    {
+        _pictureBox.BackColor = Color.Aquamarine;
+        _pictureBox.Name = "Blanco Seleccionado";
     }
 
     private void SetColorNegro()
