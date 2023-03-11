@@ -43,7 +43,7 @@ namespace UnitTestProject1
         public void MoverPeon11()
         {
             var logicGame = new LogicGame();
-            var peon = new Piezas(null, TipoDePieza.Peon);
+            var peon = new Piezas(null, TipoDePieza.Peon, default);
             var tablero = new Tablero(8, 8);
             var coordenada = new Coordenada(1, 1);
 
@@ -75,7 +75,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void PeonSeMueveCorrectamente()
         {
-            var peon = new Piezas(null, TipoDePieza.Peon);
+            var peon = new Piezas(null, TipoDePieza.Peon, default);
             peon.Movimientos.Should().ContainEquivalentOf(new Coordenada(0, 1));
             peon.Movimientos.Should().ContainEquivalentOf(new Coordenada(0, 2));
         }
@@ -85,8 +85,8 @@ namespace UnitTestProject1
         {
             var logicGame = new LogicGame();
             var tablero = new Tablero(8, 8);
-            var peonAMover = new Piezas(null, TipoDePieza.Peon);
-            var peonEnemigo = new Piezas(null, TipoDePieza.Peon);
+            var peonAMover = new Piezas(null, TipoDePieza.Peon, default);
+            var peonEnemigo = new Piezas(null, TipoDePieza.Peon, default);
             var coordenadaPeonAMover = new Coordenada(1, 1);
             var coordenadaPeonEnemigo = new Coordenada(1, 2);
 
@@ -104,19 +104,19 @@ namespace UnitTestProject1
         [TestMethod]
         public void PeonGetMovsDondeCome()
         {
-            var peon = new Piezas(null, TipoDePieza.Peon);
+            var peon = new Piezas(null, TipoDePieza.Peon, default);
             
             peon.MovimientosDondeCome.Should().ContainEquivalentOf(new Coordenada(1, 1));
             peon.MovimientosDondeCome.Should().ContainEquivalentOf(new Coordenada(-1, 1));
         }
 
         [TestMethod]
-        public void PeonDebeComerSiPuede()
+        public void PeonMovsDondeCome()
         {
             var logicGame = new LogicGame();
             var tablero = new Tablero(8, 8);
-            var peonAMover = new Piezas(null, TipoDePieza.Peon);
-            var peonEnemigo = new Piezas(null, TipoDePieza.Peon);
+            var peonAMover = new Piezas(null, TipoDePieza.Peon, default);
+            var peonEnemigo = new Piezas(null, TipoDePieza.Peon, default);
             var coordenadaPeonAMover = new Coordenada(1, 1);
             var coordenadaPeonEnemigo = new Coordenada(2, 2);
 
@@ -130,14 +130,14 @@ namespace UnitTestProject1
         }
 
         [TestMethod]
-        public void PeonNoDebeComerSiPuede2Posibilidades()
+        public void PeonMovsDondeCome2Posibilidades()
         {
             var logicGame = new LogicGame();
             var tablero = new Tablero(8, 8);
 
-            var peonAMover = new Piezas(null, TipoDePieza.Peon);
-            var peonEnemigo = new Piezas(null, TipoDePieza.Peon);
-            var peonEnemigo2 = new Piezas(null, TipoDePieza.Peon);
+            var peonAMover = new Piezas(null, TipoDePieza.Peon, Equipo.Blanco);
+            var peonEnemigo = new Piezas(null, TipoDePieza.Peon, Equipo.Negro);
+            var peonEnemigo2 = new Piezas(null, TipoDePieza.Peon, Equipo.Negro);
             var coordenadaPeonAMover = new Coordenada(1, 1);
             var coordenadaPeonEnemigo = new Coordenada(2, 2);
             var coordenadaPeonEnemigo2 = new Coordenada(0, 2);
@@ -155,6 +155,31 @@ namespace UnitTestProject1
 
             coordenadasDondecomer.Should().ContainEquivalentOf(new Coordenada(2, 2));
             coordenadasDondecomer.Should().ContainEquivalentOf(new Coordenada(0, 2));
+        }
+
+        [TestMethod]
+        public void PeonNoPuedeComerUnaPiezaSiEsAliada()
+        {
+            var logicGame = new LogicGame();
+            var tablero = new Tablero(8, 8);
+
+            var peonAMover = new Piezas(null, TipoDePieza.Peon,Equipo.Blanco );
+            var peonAliado = new Piezas(null, TipoDePieza.Peon, Equipo.Blanco);
+            var coordenadaPeonAMover = new Coordenada(1, 1);
+            var coordenadaPeonAliado = new Coordenada(2, 2);
+
+            tablero.SetPieza(peonAMover, coordenadaPeonAMover);
+            tablero.SetPieza(peonAliado, coordenadaPeonAliado);
+
+            var posiblesMovs = logicGame.GetPosibleMovs(peonAMover, coordenadaPeonAMover);
+            // le consulto al logic game que me diga si puedo moverme a la coordenada 1, 2
+            var movSelected = posiblesMovs[0];
+
+            Coordenada[] coordenadasDondecomer =
+                logicGame.GetPosiblesMovimientosParaComer(tablero, coordenadaPeonAMover);
+
+            coordenadasDondecomer.Length.Should().Be(0);
+            coordenadasDondecomer.Should().NotContainEquivalentOf(new Coordenada(2, 2));
         }
     }
 }

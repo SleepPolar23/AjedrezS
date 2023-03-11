@@ -52,6 +52,7 @@
     <Compile Include="Domain\Casilla.cs" />
     <Compile Include="Domain\ColorCasilla.cs" />
     <Compile Include="Domain\Coordenada.cs" />
+    <Compile Include="Domain\Equipo.cs" />
     <Compile Include="Domain\Game.cs" />
     <Compile Include="Domain\LoaderImage.cs" />
     <Compile Include="Domain\PiezasFactory.cs" />

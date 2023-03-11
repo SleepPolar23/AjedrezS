@@ -7,7 +7,7 @@ namespace Ajedrez
     public class Piezas
     {
         private TipoDePieza _tipoPieza;
-        private int _color;
+        private Equipo _equipo;
         private bool _movimientoEspecial;
         public Image _image;
 
@@ -47,11 +47,11 @@ namespace Ajedrez
             }
         }
 
-        public Piezas(Image pictureBox, TipoDePieza tipoDePieza)
+        public Piezas(Image pictureBox, TipoDePieza tipoDePieza, Equipo equipo)
         {
             _image = pictureBox;
             _tipoPieza = tipoDePieza;
-            _color = -1;
+            _equipo = equipo;
         }
     }
 }
