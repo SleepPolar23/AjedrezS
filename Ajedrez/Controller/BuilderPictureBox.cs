@@ -44,18 +44,14 @@ public class BuilderPictureBox
         _pictureBox.Size = new Size(size, size);
         _pictureBox.Location = new Point(_casilla.Coordenada.X * size, _casilla.Coordenada.Y * size);
 
-        if (_casilla.ColorCasilla == ColorCasilla.Blanco)
-        {
-            if (_casilla.Estado == EstadoCasilla.Seleccionada)
-                SetColorBlancoSelected();
-
-            if (_casilla.Estado == EstadoCasilla.Normal)
-                SetColorBlanco();
-            
-            if (_casilla.Estado == EstadoCasilla.PosibleMovimiento)
-                _pictureBox.BackColor = Color.Blue;
-        }
+        if (_casilla.ColorCasilla == ColorCasilla.Blanco) SetColorBlanco();
         else SetColorNegro();
+
+        if (_casilla.Estado == EstadoCasilla.Seleccionada)
+            SetColorSelected();
+
+        if (_casilla.Estado == EstadoCasilla.PosibleMovimiento)
+            _pictureBox.BackColor = Color.Blue;
 
         _pictureBox.Image = _casilla.Pieza?._image;
         _pictureBox.MouseHover += (sender, args) =>
@@ -72,7 +68,7 @@ public class BuilderPictureBox
         _pictureBox.Name = "Blanco";
     }
 
-    private void SetColorBlancoSelected()
+    private void SetColorSelected()
     {
         _pictureBox.BackColor = Color.Aquamarine;
         _pictureBox.Name = "Blanco Seleccionado";
