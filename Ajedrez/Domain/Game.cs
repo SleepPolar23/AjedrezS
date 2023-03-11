@@ -76,10 +76,21 @@ public class Game
     public void MoverPieza(Coordenada coordenadaDestino)
     {
         if (CasillaSelected == null) return;
-        
+
         Tablero.MovPieza(CasillaSelected.Coordenada, coordenadaDestino);
-        _observer?.TableroCambio(Tablero);
         CasillaSelected = null;
+        RefreshTablero();
+        _observer?.TableroCambio(Tablero);
+    }
+
+    public void ComerPieza(Coordenada casillaCoordenada)
+    {
+        if (CasillaSelected == null) return;
+
+        Tablero.ComerPieza(CasillaSelected.Coordenada, casillaCoordenada);
+        CasillaSelected = null;
+        RefreshTablero();
+        _observer?.TableroCambio(Tablero);
     }
 }
 

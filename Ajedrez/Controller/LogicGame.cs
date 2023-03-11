@@ -33,7 +33,16 @@ public class LogicGame
     public Coordenada[] GetPosiblesMovsDondeCome(Piezas peon, Coordenada coordenada)
     {
         var movs = peon.MovimientosDondeCome;
-        return movs.Select(mov => new Coordenada(coordenada.X + mov.X, coordenada.Y + mov.Y)).ToArray();
+        if (peon._equipo == Equipo.Blanco)
+        {
+            return movs.Select(mov => new Coordenada(coordenada.X + mov.X, coordenada.Y + mov.Y))
+                .Where(mov => mov.X < Columns && mov.Y < Rows).ToArray();
+        }
+        else
+        {
+            return movs.Select(mov => new Coordenada(coordenada.X - mov.X, coordenada.Y - mov.Y))
+                .Where(mov => mov.X < Columns && mov.X >= 0 && mov.Y < Rows && mov.Y >= 0).ToArray();
+        }
     }
 
     public bool PuedoMoverme(Coordenada movSelected, Tablero tablero)

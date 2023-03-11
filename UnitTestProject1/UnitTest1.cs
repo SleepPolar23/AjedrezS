@@ -271,5 +271,100 @@ namespace UnitTestProject1
             posiblesMovs.Should().ContainEquivalentOf(new Coordenada(3, 1));
             posiblesMovs.Length.Should().Be(2);
         }
+
+        [TestMethod]
+        public void PeonSeMueveParaComer()
+        {
+            var logicGame = new LogicGame();
+            var peon = new Piezas(null, TipoDePieza.Peon, Equipo.Blanco);
+            var peonEnemigo = new Piezas(null, TipoDePieza.Peon, Equipo.Negro);
+            var tablero = new Tablero(8, 8);
+            var coordenadaSeleccionado = new Coordenada(1, 1);
+            var coordenadaEnemigo = new Coordenada(2, 2);
+
+            // al tablero se le inserta una pieza a la coordenada de la casilla
+            tablero.SetPieza(peon, coordenadaSeleccionado);
+            tablero.SetPieza(peonEnemigo, coordenadaEnemigo);
+
+            // entonces muevo la pieza a la coordenada 1, 2
+            var posiblesMovs = logicGame.GetPosiblesMovsDondeCome(peon, coordenadaSeleccionado);
+
+            var movSelected = posiblesMovs[0];
+
+            // entonces la pieza se mueve a la coordenada 1, 2
+            var action = new Action(() => tablero.ComerPieza(coordenadaSeleccionado, movSelected));
+
+            // cuando se ejecute la funcion mover pieza, no debe dar error
+            action.Should().NotThrow();
+
+            // compruebo que la pieza se haiga comido
+            var casilla =
+                tablero.Casillas.Where(j => j.Coordenada.X == movSelected.X && j.Coordenada.Y == movSelected.Y).First();
+
+            casilla.Pieza.Should().Be(peon);
+
+            // comprueba que la coordenada origen no tiene pieza
+            var casillaOrigen =
+                tablero.Casillas.Where(j =>
+                    j.Coordenada.X == coordenadaSeleccionado.X && j.Coordenada.Y == coordenadaSeleccionado.Y).First();
+
+            casillaOrigen.Pieza.Should().BeNull();
+        }
+
+        [TestMethod]
+        public void LosPosiblesMovimientosDondeCome_ParaELBlancoSonPositivos()
+        {
+            var logicGame = new LogicGame();
+            var peon = new Piezas(null, TipoDePieza.Peon, Equipo.Blanco);
+
+            var tablero = new Tablero(8, 8);
+            var coordenadaSeleccionado = new Coordenada(1, 1);
+
+            // al tablero se le inserta una pieza a la coordenada de la casilla
+            tablero.SetPieza(peon, coordenadaSeleccionado);
+
+            // entonces muevo la pieza a la coordenada 1, 2
+            var posiblesMovs = logicGame.GetPosiblesMovsDondeCome(peon, coordenadaSeleccionado);
+
+            posiblesMovs.Should().ContainEquivalentOf(new Coordenada(2, 2));
+            posiblesMovs.Should().ContainEquivalentOf(new Coordenada(0, 2));
+        }
+
+        [TestMethod]
+        public void LosPosiblesMovimientosDondeCome_ParaELNegroSonPositivos()
+        {
+            var logicGame = new LogicGame();
+            var peon = new Piezas(null, TipoDePieza.Peon, Equipo.Negro);
+
+            var tablero = new Tablero(8, 8);
+            var coordenadaSeleccionado = new Coordenada(3, 3);
+
+            // al tablero se le inserta una pieza a la coordenada de la casilla
+            tablero.SetPieza(peon, coordenadaSeleccionado);
+
+            // entonces muevo la pieza a la coordenada 1, 2
+            var posiblesMovs = logicGame.GetPosiblesMovsDondeCome(peon, coordenadaSeleccionado);
+
+            posiblesMovs.Should().ContainEquivalentOf(new Coordenada(4, 2));
+            posiblesMovs.Should().ContainEquivalentOf(new Coordenada(2, 2));
+        }
+
+        [TestMethod]
+        public void LosPosiblesMovimientosCuandoCome_NoPuedenEstarFueraDeLosLimites()
+        {
+            var logicGame = new LogicGame();
+            var peon = new Piezas(null, TipoDePieza.Peon, Equipo.Negro);
+
+            var tablero = new Tablero(8, 8);
+            var coordenadaSeleccionado = new Coordenada(0, 0);
+
+            // al tablero se le inserta una pieza a la coordenada de la casilla
+            tablero.SetPieza(peon, coordenadaSeleccionado);
+
+            // entonces muevo la pieza a la coordenada 1, 2
+            var posiblesMovs = logicGame.GetPosiblesMovsDondeCome(peon, coordenadaSeleccionado);
+
+            posiblesMovs.Length.Should().Be(0);
+        }
     }
 }

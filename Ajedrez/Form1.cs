@@ -61,8 +61,8 @@ public partial class Ajedrez : Form, ITableroObserver
                         _game.SetCasillaSeleccionada(casilla.Coordenada);
                     if (casilla.Estado == EstadoCasilla.PosibleMovimiento)
                         _game.MoverPieza(casilla.Coordenada);
-                    //if (casilla.Estado == EstadoCasilla.PosbileComer)
-                        //_game.ComerPieza(casilla.Coordenada);
+                    if (casilla.Estado == EstadoCasilla.PosbileComer)
+                        _game.ComerPieza(casilla.Coordenada);
                 })
                 .ToCasilla(casilla)
                 .Build(label1);
