@@ -1,0 +1,149 @@
+C:\Users\Cristian\source\repos\Ajedrez5\Ajedrez\bin\Release\Ajedrez.exe.config
+C:\Users\Cristian\source\repos\Ajedrez5\Ajedrez\bin\Release\Ajedrez.exe
+C:\Users\Cristian\source\repos\Ajedrez5\Ajedrez\bin\Release\Ajedrez.pdb
+C:\Users\Cristian\source\repos\Ajedrez5\Ajedrez\obj\Release\Ajedrez.csproj.AssemblyReference.cache
+C:\Users\Cristian\source\repos\Ajedrez5\Ajedrez\obj\Release\Ajedrez.csproj.SuggestedBindingRedirects.cache
+C:\Users\Cristian\source\repos\Ajedrez5\Ajedrez\obj\Release\Ajedrez.Ajedrez.resources
+C:\Users\Cristian\source\repos\Ajedrez5\Ajedrez\obj\Release\Ajedrez.Properties.Resources.resources
+C:\Users\Cristian\source\repos\Ajedrez5\Ajedrez\obj\Release\Ajedrez.csproj.GenerateResource.cache
+C:\Users\Cristian\source\repos\Ajedrez5\Ajedrez\obj\Release\Ajedrez.csproj.CoreCompileInputs.cache
+C:\Users\Cristian\source\repos\Ajedrez5\Ajedrez\obj\Release\Ajedrez.exe
+C:\Users\Cristian\source\repos\Ajedrez5\Ajedrez\obj\Release\Ajedrez.pdb
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\bin\Release\Piezas\Piezas Blancas\alfilBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\bin\Release\Piezas\Piezas Blancas\caballoBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\bin\Release\Piezas\Piezas Blancas\peonBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\bin\Release\Piezas\Piezas Blancas\reinaBlanca.png
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\bin\Release\Piezas\Piezas Blancas\reyBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\bin\Release\Piezas\Piezas Blancas\torreBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\bin\Release\Piezas\Piezas Negras\alfilNegro.png
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\bin\Release\Piezas\Piezas Negras\caballoNegro.png
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\bin\Release\Piezas\Piezas Negras\peonNegro.png
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\bin\Release\Piezas\Piezas Negras\reinaNegra.png
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\bin\Release\Piezas\Piezas Negras\reyNegro.png
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\bin\Release\Piezas\Piezas Negras\torreNegro.png
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\bin\Release\Ajedrez.exe.config
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\bin\Release\Ajedrez.exe
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\bin\Release\Ajedrez.pdb
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\obj\Release\Ajedrez.csproj.AssemblyReference.cache
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\obj\Release\Ajedrez.csproj.SuggestedBindingRedirects.cache
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\obj\Release\Ajedrez.Ajedrez.resources
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\obj\Release\Ajedrez.Properties.Resources.resources
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\obj\Release\Ajedrez.csproj.GenerateResource.cache
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\obj\Release\Ajedrez.csproj.CoreCompileInputs.cache
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\obj\Release\Ajedrez.exe
+C:\Users\Cristian\source\repos\AjedrezS\Ajedrez\obj\Release\Ajedrez.pdb
+C:\Users\Cristian\source\repos\AjedrezS2\Ajedrez\bin\Release\Ajedrez.exe.config
+C:\Users\Cristian\source\repos\AjedrezS2\Ajedrez\bin\Release\Ajedrez.exe
+C:\Users\Cristian\source\repos\AjedrezS2\Ajedrez\bin\Release\Ajedrez.pdb
+C:\Users\Cristian\source\repos\AjedrezS2\Ajedrez\obj\Release\Ajedrez.csproj.AssemblyReference.cache
+C:\Users\Cristian\source\repos\AjedrezS2\Ajedrez\obj\Release\Ajedrez.csproj.SuggestedBindingRedirects.cache
+C:\Users\Cristian\source\repos\AjedrezS2\Ajedrez\obj\Release\Ajedrez.Ajedrez.resources
+C:\Users\Cristian\source\repos\AjedrezS2\Ajedrez\obj\Release\Ajedrez.Properties.Resources.resources
+C:\Users\Cristian\source\repos\AjedrezS2\Ajedrez\obj\Release\Ajedrez.csproj.GenerateResource.cache
+C:\Users\Cristian\source\repos\AjedrezS2\Ajedrez\obj\Release\Ajedrez.csproj.CoreCompileInputs.cache
+C:\Users\Cristian\source\repos\AjedrezS2\Ajedrez\obj\Release\Ajedrez.exe
+C:\Users\Cristian\source\repos\AjedrezS2\Ajedrez\obj\Release\Ajedrez.pdb
+C:\Users\Cristian\source\repos\AjedrezS2\Ajedrez\bin\Release\Piezas\Piezas Blancas\2alfilBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS2\Ajedrez\bin\Release\Piezas\Piezas Blancas\1caballoBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS2\Ajedrez\bin\Release\Piezas\Piezas Blancas\0peonBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS2\Ajedrez\bin\Release\Piezas\Piezas Blancas\4reinaBlanca.png
+C:\Users\Cristian\source\repos\AjedrezS2\Ajedrez\bin\Release\Piezas\Piezas Blancas\5reyBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS2\Ajedrez\bin\Release\Piezas\Piezas Blancas\3torreBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS2\Ajedrez\bin\Release\Piezas\Piezas Negras\2alfilNegro.png
+C:\Users\Cristian\source\repos\AjedrezS2\Ajedrez\bin\Release\Piezas\Piezas Negras\1caballoNegro.png
+C:\Users\Cristian\source\repos\AjedrezS2\Ajedrez\bin\Release\Piezas\Piezas Negras\0peonNegro.png
+C:\Users\Cristian\source\repos\AjedrezS2\Ajedrez\bin\Release\Piezas\Piezas Negras\4reinaNegra.png
+C:\Users\Cristian\source\repos\AjedrezS2\Ajedrez\bin\Release\Piezas\Piezas Negras\5reyNegro.png
+C:\Users\Cristian\source\repos\AjedrezS2\Ajedrez\bin\Release\Piezas\Piezas Negras\3torreNegro.png
+C:\Users\Cristian\source\repos\AjedrezS3 - Modificando cosas del S2\Ajedrez\obj\Release\Ajedrez.csproj.AssemblyReference.cache
+C:\Users\Cristian\source\repos\AjedrezS3 - Modificando cosas del S2\Ajedrez\obj\Release\Ajedrez.csproj.SuggestedBindingRedirects.cache
+C:\Users\Cristian\source\repos\AjedrezS3 - Modificando cosas del S2\Ajedrez\obj\Release\Ajedrez.Ajedrez.resources
+C:\Users\Cristian\source\repos\AjedrezS3 - Modificando cosas del S2\Ajedrez\obj\Release\Ajedrez.Properties.Resources.resources
+C:\Users\Cristian\source\repos\AjedrezS3 - Modificando cosas del S2\Ajedrez\obj\Release\Ajedrez.csproj.GenerateResource.cache
+C:\Users\Cristian\source\repos\AjedrezS3 - Modificando cosas del S2\Ajedrez\obj\Release\Ajedrez.csproj.CoreCompileInputs.cache
+C:\Users\Cristian\source\repos\AjedrezS3 - Modificando cosas del S2\Ajedrez\obj\Release\Ajedrez.exe
+C:\Users\Cristian\source\repos\AjedrezS3 - Modificando cosas del S2\Ajedrez\obj\Release\Ajedrez.pdb
+C:\Users\Cristian\source\repos\AjedrezS3 - Modificando cosas del S2\Ajedrez\bin\Release\Piezas\Piezas Blancas\2alfilBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS3 - Modificando cosas del S2\Ajedrez\bin\Release\Piezas\Piezas Blancas\1caballoBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS3 - Modificando cosas del S2\Ajedrez\bin\Release\Piezas\Piezas Blancas\0peonBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS3 - Modificando cosas del S2\Ajedrez\bin\Release\Piezas\Piezas Blancas\4reinaBlanca.png
+C:\Users\Cristian\source\repos\AjedrezS3 - Modificando cosas del S2\Ajedrez\bin\Release\Piezas\Piezas Blancas\5reyBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS3 - Modificando cosas del S2\Ajedrez\bin\Release\Piezas\Piezas Blancas\3torreBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS3 - Modificando cosas del S2\Ajedrez\bin\Release\Piezas\Piezas Negras\2alfilNegro.png
+C:\Users\Cristian\source\repos\AjedrezS3 - Modificando cosas del S2\Ajedrez\bin\Release\Piezas\Piezas Negras\1caballoNegro.png
+C:\Users\Cristian\source\repos\AjedrezS3 - Modificando cosas del S2\Ajedrez\bin\Release\Piezas\Piezas Negras\0peonNegro.png
+C:\Users\Cristian\source\repos\AjedrezS3 - Modificando cosas del S2\Ajedrez\bin\Release\Piezas\Piezas Negras\4reinaNegra.png
+C:\Users\Cristian\source\repos\AjedrezS3 - Modificando cosas del S2\Ajedrez\bin\Release\Piezas\Piezas Negras\5reyNegro.png
+C:\Users\Cristian\source\repos\AjedrezS3 - Modificando cosas del S2\Ajedrez\bin\Release\Piezas\Piezas Negras\3torreNegro.png
+C:\Users\Cristian\source\repos\AjedrezS3 - Modificando cosas del S2\Ajedrez\bin\Release\Ajedrez.exe.config
+C:\Users\Cristian\source\repos\AjedrezS3 - Modificando cosas del S2\Ajedrez\bin\Release\Ajedrez.exe
+C:\Users\Cristian\source\repos\AjedrezS3 - Modificando cosas del S2\Ajedrez\bin\Release\Ajedrez.pdb
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S3\Ajedrez\bin\Release\Piezas\Piezas Blancas\2alfilBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S3\Ajedrez\bin\Release\Piezas\Piezas Blancas\1caballoBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S3\Ajedrez\bin\Release\Piezas\Piezas Blancas\0peonBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S3\Ajedrez\bin\Release\Piezas\Piezas Blancas\4reinaBlanca.png
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S3\Ajedrez\bin\Release\Piezas\Piezas Blancas\5reyBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S3\Ajedrez\bin\Release\Piezas\Piezas Blancas\3torreBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S3\Ajedrez\bin\Release\Piezas\Piezas Negras\2alfilNegro.png
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S3\Ajedrez\bin\Release\Piezas\Piezas Negras\1caballoNegro.png
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S3\Ajedrez\bin\Release\Piezas\Piezas Negras\0peonNegro.png
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S3\Ajedrez\bin\Release\Piezas\Piezas Negras\4reinaNegra.png
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S3\Ajedrez\bin\Release\Piezas\Piezas Negras\5reyNegro.png
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S3\Ajedrez\bin\Release\Piezas\Piezas Negras\3torreNegro.png
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S3\Ajedrez\bin\Release\Ajedrez.exe.config
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S3\Ajedrez\bin\Release\Ajedrez.exe
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S3\Ajedrez\bin\Release\Ajedrez.pdb
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S3\Ajedrez\obj\Release\Ajedrez.csproj.AssemblyReference.cache
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S3\Ajedrez\obj\Release\Ajedrez.csproj.SuggestedBindingRedirects.cache
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S3\Ajedrez\obj\Release\Ajedrez.Ajedrez.resources
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S3\Ajedrez\obj\Release\Ajedrez.Properties.Resources.resources
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S3\Ajedrez\obj\Release\Ajedrez.csproj.GenerateResource.cache
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S3\Ajedrez\obj\Release\Ajedrez.csproj.CoreCompileInputs.cache
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S3\Ajedrez\obj\Release\Ajedrez.exe
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S3\Ajedrez\obj\Release\Ajedrez.pdb
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S4 con herencia\Ajedrez\bin\Release\Piezas\Piezas Blancas\2alfilBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S4 con herencia\Ajedrez\bin\Release\Piezas\Piezas Blancas\1caballoBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S4 con herencia\Ajedrez\bin\Release\Piezas\Piezas Blancas\0peonBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S4 con herencia\Ajedrez\bin\Release\Piezas\Piezas Blancas\4reinaBlanca.png
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S4 con herencia\Ajedrez\bin\Release\Piezas\Piezas Blancas\5reyBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S4 con herencia\Ajedrez\bin\Release\Piezas\Piezas Blancas\3torreBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S4 con herencia\Ajedrez\bin\Release\Piezas\Piezas Negras\2alfilNegro.png
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S4 con herencia\Ajedrez\bin\Release\Piezas\Piezas Negras\1caballoNegro.png
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S4 con herencia\Ajedrez\bin\Release\Piezas\Piezas Negras\0peonNegro.png
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S4 con herencia\Ajedrez\bin\Release\Piezas\Piezas Negras\4reinaNegra.png
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S4 con herencia\Ajedrez\bin\Release\Piezas\Piezas Negras\5reyNegro.png
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S4 con herencia\Ajedrez\bin\Release\Piezas\Piezas Negras\3torreNegro.png
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S4 con herencia\Ajedrez\bin\Release\Ajedrez.exe.config
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S4 con herencia\Ajedrez\bin\Release\Ajedrez.exe
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S4 con herencia\Ajedrez\bin\Release\Ajedrez.pdb
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S4 con herencia\Ajedrez\obj\Release\Ajedrez.csproj.AssemblyReference.cache
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S4 con herencia\Ajedrez\obj\Release\Ajedrez.csproj.SuggestedBindingRedirects.cache
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S4 con herencia\Ajedrez\obj\Release\Ajedrez.Ajedrez.resources
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S4 con herencia\Ajedrez\obj\Release\Ajedrez.Properties.Resources.resources
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S4 con herencia\Ajedrez\obj\Release\Ajedrez.csproj.GenerateResource.cache
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S4 con herencia\Ajedrez\obj\Release\Ajedrez.csproj.CoreCompileInputs.cache
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S4 con herencia\Ajedrez\obj\Release\Ajedrez.exe
+C:\Users\Cristian\source\repos\AjedrezS4 - Modificando movimiento de pieza del S4 con herencia\Ajedrez\obj\Release\Ajedrez.pdb
+C:\Users\Cristian\source\repos\AjedrezS5 - Buscando la forma de hacer mover la pieza\Ajedrez\bin\Release\Piezas\Piezas Blancas\2alfilBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS5 - Buscando la forma de hacer mover la pieza\Ajedrez\bin\Release\Piezas\Piezas Blancas\1caballoBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS5 - Buscando la forma de hacer mover la pieza\Ajedrez\bin\Release\Piezas\Piezas Blancas\0peonBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS5 - Buscando la forma de hacer mover la pieza\Ajedrez\bin\Release\Piezas\Piezas Blancas\4reinaBlanca.png
+C:\Users\Cristian\source\repos\AjedrezS5 - Buscando la forma de hacer mover la pieza\Ajedrez\bin\Release\Piezas\Piezas Blancas\5reyBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS5 - Buscando la forma de hacer mover la pieza\Ajedrez\bin\Release\Piezas\Piezas Blancas\3torreBlanco.png
+C:\Users\Cristian\source\repos\AjedrezS5 - Buscando la forma de hacer mover la pieza\Ajedrez\bin\Release\Piezas\Piezas Negras\2alfilNegro.png
+C:\Users\Cristian\source\repos\AjedrezS5 - Buscando la forma de hacer mover la pieza\Ajedrez\bin\Release\Piezas\Piezas Negras\1caballoNegro.png
+C:\Users\Cristian\source\repos\AjedrezS5 - Buscando la forma de hacer mover la pieza\Ajedrez\bin\Release\Piezas\Piezas Negras\0peonNegro.png
+C:\Users\Cristian\source\repos\AjedrezS5 - Buscando la forma de hacer mover la pieza\Ajedrez\bin\Release\Piezas\Piezas Negras\4reinaNegra.png
+C:\Users\Cristian\source\repos\AjedrezS5 - Buscando la forma de hacer mover la pieza\Ajedrez\bin\Release\Piezas\Piezas Negras\5reyNegro.png
+C:\Users\Cristian\source\repos\AjedrezS5 - Buscando la forma de hacer mover la pieza\Ajedrez\bin\Release\Piezas\Piezas Negras\3torreNegro.png
+C:\Users\Cristian\source\repos\AjedrezS5 - Buscando la forma de hacer mover la pieza\Ajedrez\bin\Release\Ajedrez.exe.config
+C:\Users\Cristian\source\repos\AjedrezS5 - Buscando la forma de hacer mover la pieza\Ajedrez\bin\Release\Ajedrez.exe
+C:\Users\Cristian\source\repos\AjedrezS5 - Buscando la forma de hacer mover la pieza\Ajedrez\bin\Release\Ajedrez.pdb
+C:\Users\Cristian\source\repos\AjedrezS5 - Buscando la forma de hacer mover la pieza\Ajedrez\obj\Release\Ajedrez.csproj.AssemblyReference.cache
+C:\Users\Cristian\source\repos\AjedrezS5 - Buscando la forma de hacer mover la pieza\Ajedrez\obj\Release\Ajedrez.csproj.SuggestedBindingRedirects.cache
+C:\Users\Cristian\source\repos\AjedrezS5 - Buscando la forma de hacer mover la pieza\Ajedrez\obj\Release\Ajedrez.Ajedrez.resources
+C:\Users\Cristian\source\repos\AjedrezS5 - Buscando la forma de hacer mover la pieza\Ajedrez\obj\Release\Ajedrez.Properties.Resources.resources
+C:\Users\Cristian\source\repos\AjedrezS5 - Buscando la forma de hacer mover la pieza\Ajedrez\obj\Release\Ajedrez.csproj.GenerateResource.cache
+C:\Users\Cristian\source\repos\AjedrezS5 - Buscando la forma de hacer mover la pieza\Ajedrez\obj\Release\Ajedrez.csproj.CoreCompileInputs.cache
+C:\Users\Cristian\source\repos\AjedrezS5 - Buscando la forma de hacer mover la pieza\Ajedrez\obj\Release\Ajedrez.exe
+C:\Users\Cristian\source\repos\AjedrezS5 - Buscando la forma de hacer mover la pieza\Ajedrez\obj\Release\Ajedrez.pdb
