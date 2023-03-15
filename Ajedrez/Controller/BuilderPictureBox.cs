@@ -1,15 +1,16 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using Ajedrez.Domain;
+using Ajedrez.Controller.Enums;
 
 namespace Ajedrez.Controller;
 
 public class BuilderPictureBox
 {
     private int size;
-    private Casilla _casilla;
     private PictureBox _pictureBox;
+    private Color color;
+    private int i, j;
 
     private BuilderPictureBox()
     {
@@ -27,9 +28,10 @@ public class BuilderPictureBox
         return this;
     }
 
-    public BuilderPictureBox ToCasilla(Casilla casilla)
+    public BuilderPictureBox WithLocation(int i, int j)
     {
-        _casilla = casilla;
+        this.i = i;
+        this.j = j;
         return this;
     }
 
@@ -38,33 +40,29 @@ public class BuilderPictureBox
         _pictureBox.Click += action;
         return this;
     }
+    
+    public BuilderPictureBox WithColorCasilla(TipoCasilla colorCasilla)
+    {
+        color = SetColorCasilla(colorCasilla);
+        return this;
+    }
 
-    public PictureBox Build(Label label)
+    public PictureBox Build()
     {
         _pictureBox.Size = new Size(size, size);
-        _pictureBox.Location = new Point(_casilla.Coordenada.X * size, _casilla.Coordenada.Y * size);
+        _pictureBox.Location = new Point(j * size, i * size);
 
-        if (_casilla.ColorCasilla == ColorCasilla.Blanco) SetColorBlanco();
-        else SetColorNegro();
-
-        _pictureBox.Image = _casilla.Pieza?._image;
-        _pictureBox.MouseHover += (sender, args) =>
-        {
-            label.Text = $"X = {_casilla.Coordenada.X}, Y = {_casilla.Coordenada.Y}";
-        };
+        _pictureBox.BackColor = color;
+        _pictureBox.Tag = new Point(j, i);
 
         return _pictureBox;
     }
 
-    private void SetColorBlanco()
+    public static Color SetColorCasilla(TipoCasilla colorCasilla)
     {
-        _pictureBox.BackColor = Color.FromArgb(106, 117, 136); // Asignar el color negro
-        _pictureBox.Name = "Blanco";
-    }
+        if (colorCasilla == TipoCasilla.Blanco)
+            return Colores.BlancoNormal;
 
-    private void SetColorNegro()
-    {
-        _pictureBox.BackColor = Color.FromArgb(42, 49, 62); // Asignar el color blanco
-        _pictureBox.Name = "Negro";
+        return Colores.NegroNormal;
     }
 }

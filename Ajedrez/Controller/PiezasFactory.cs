@@ -1,3 +1,4 @@
+using Ajedrez.PosiblesMovimientosDeLaPieza;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -14,12 +15,12 @@ public class PiezasFactory
     }
 
 
-    public Piezas Caballo => new Piezas(_piezasImage.ElementAt(1));
-    public Piezas Peones => new Piezas(_piezasImage.ElementAt(0));
-    public Piezas Torres => new Piezas(_piezasImage.ElementAt(3));
-    public Piezas Alfil => new Piezas(_piezasImage.ElementAt(2));
-    public Piezas Reina => new Piezas(_piezasImage.ElementAt(4));
-    public Piezas Rey => new Piezas(_piezasImage.ElementAt(5));
+    public Piezas Peones => new Peon(_piezasImage.ElementAt(0), MovimientoEspecial.True);
+    public Piezas Caballo => new Caballo(_piezasImage.ElementAt(1), MovimientoEspecial.False);
+    public Piezas Alfil => new Alfil(_piezasImage.ElementAt(2), MovimientoEspecial.False);
+    public Piezas Torres => new Torre(_piezasImage.ElementAt(3), MovimientoEspecial.True);
+    public Piezas Reina => new Reina(_piezasImage.ElementAt(4), MovimientoEspecial.False);
+    public Piezas Rey => new Rey(_piezasImage.ElementAt(5), MovimientoEspecial.True);
 
 
     public class Builder

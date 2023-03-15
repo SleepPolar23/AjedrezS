@@ -1,24 +1,32 @@
 #nullable enable
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
+using System.Windows.Forms;
+using Ajedrez;
 
 namespace Ajedrez.Controller;
 
 public class Tablero
 {
-    public List<Casilla> Casillas { get; set; }
+    public static Point ultimaPosicion;
+    public static List<Point> listaPuedeMover = new List<Point>();
+    public static int turno = -1;
 
-    public Tablero(int rows, int columns)
+    public Casilla[,] Casillas { get; set; }
+
+    public Tablero(int size, int rows, int columns, Panel PanelTablero)
     {
         // crea las casillas
-        Casillas = new List<Casilla>();
+        Casillas = new Casilla[rows, columns];
 
         for (int i = 0; i < rows; i++)
         {
             for (int j = 0; j < columns; j++)
             {
                 var color = (i + j) % 2;
-                Casillas.Add(new Casilla(color, i, j));
+                Casillas[i, j] = new Casilla(color, size, i, j, Casillas);
+                PanelTablero.Controls.Add(Casillas[i, j].pb);
             }
         }
 
@@ -27,7 +35,7 @@ public class Tablero
 
     private void SetPiezasToCasillas()
     {
-        new TableroDefault(ColorCasilla.Blanco, Casillas).SetPiezasToCasillas();
-        new TableroDefault(ColorCasilla.Negro, Casillas).SetPiezasToCasillas();
+        new TableroDefault(TipoCasilla.Blanco, Casillas).SetPiezasToCasillas();
+        new TableroDefault(TipoCasilla.Negro, Casillas).SetPiezasToCasillas();
     }
 }

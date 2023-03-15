@@ -48,16 +48,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\BuilderPictureBox.cs" />
-    <Compile Include="Controller\LogicGame.cs" />
-    <Compile Include="Domain\Casilla.cs" />
-    <Compile Include="Domain\ColorCasilla.cs" />
-    <Compile Include="Domain\Coordenada.cs" />
-    <Compile Include="Domain\Game.cs" />
-    <Compile Include="Domain\LoaderImage.cs" />
-    <Compile Include="Domain\PiezasFactory.cs" />
-    <Compile Include="Domain\Tablero.cs" />
-    <Compile Include="Domain\TableroDefault.cs" />
-    <Compile Include="Domain\TipoDePieza.cs" />
+    <Compile Include="Controller\Casilla.cs" />
+    <Compile Include="Controller\Enums\ParaCasilla\Colores.cs" />
+    <Compile Include="Controller\Enums\ParaCasilla\TipoCasilla.cs" />
+    <Compile Include="Controller\Enums\ParaPieza\ColorDePieza.cs" />
+    <Compile Include="Controller\PiezasFactory.cs" />
+    <Compile Include="Controller\Tablero.cs" />
+    <Compile Include="Controller\LoaderImage.cs" />
+    <Compile Include="Controller\TableroDefault.cs" />
+    <Compile Include="Controller\Enums\ParaPieza\MovimientoEspecial.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +64,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Piezas.cs" />
+    <Compile Include="PosiblesMovimientosDeLaPieza\Alfil.cs" />
+    <Compile Include="PosiblesMovimientosDeLaPieza\Caballo.cs" />
+    <Compile Include="PosiblesMovimientosDeLaPieza\Peon.cs" />
+    <Compile Include="PosiblesMovimientosDeLaPieza\Reina.cs" />
+    <Compile Include="PosiblesMovimientosDeLaPieza\Rey.cs" />
+    <Compile Include="PosiblesMovimientosDeLaPieza\Torre.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -93,42 +98,43 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Piezas\Piezas Blancas\alfilBlanco.png">
+    <Content Include="Piezas\Piezas Blancas\2alfilBlanco.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Piezas\Piezas Blancas\caballoBlanco.png">
+    <Content Include="Piezas\Piezas Blancas\1caballoBlanco.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Piezas\Piezas Blancas\peonBlanco.png">
+    <Content Include="Piezas\Piezas Blancas\0peonBlanco.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Piezas\Piezas Blancas\reinaBlanca.png">
+    <Content Include="Piezas\Piezas Blancas\4reinaBlanca.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Piezas\Piezas Blancas\reyBlanco.png">
+    <Content Include="Piezas\Piezas Blancas\5reyBlanco.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Piezas\Piezas Blancas\torreBlanco.png">
+    <Content Include="Piezas\Piezas Blancas\3torreBlanco.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Piezas\Piezas Negras\alfilNegro.png">
+    <Content Include="Piezas\Piezas Negras\2alfilNegro.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Piezas\Piezas Negras\caballoNegro.png">
+    <Content Include="Piezas\Piezas Negras\1caballoNegro.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Piezas\Piezas Negras\peonNegro.png">
+    <Content Include="Piezas\Piezas Negras\0peonNegro.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Piezas\Piezas Negras\reinaNegra.png">
+    <Content Include="Piezas\Piezas Negras\4reinaNegra.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Piezas\Piezas Negras\reyNegro.png">
+    <Content Include="Piezas\Piezas Negras\5reyNegro.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Piezas\Piezas Negras\torreNegro.png">
+    <Content Include="Piezas\Piezas Negras\3torreNegro.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,67 +1,98 @@
-using System.Collections.Generic;
-using System.Linq;
+using Ajedrez.Controller.Enums.ParaPieza;
+using Ajedrez.PosiblesMovimientosDeLaPieza;
+using System;
 
 namespace Ajedrez.Controller;
 
 public class TableroDefault
 {
-    public int filaPeones;
-    int filaNoPeones;
+    private int filaPeones, filaNoPeones;
+    private ColorDePieza colorPieza;
 
-    private readonly PiezasFactory _builderPiezaBlanca;
-    private readonly IEnumerable<Casilla> _casillas;
+    private readonly PiezasFactory _builderPieza;
+    private readonly Casilla[,] _casillas;
 
-    public TableroDefault(ColorCasilla colorPlayer, IEnumerable<Casilla> casillas)
+    public TableroDefault(TipoCasilla colorPlayer, Casilla[,] casillas)
     {
-        filaPeones = colorPlayer == ColorCasilla.Blanco ? 1 : 6;
-        filaNoPeones = colorPlayer == ColorCasilla.Blanco ? 0 : 7;
+        filaPeones = colorPlayer == TipoCasilla.Blanco ? 1 : 6;
+        filaNoPeones = colorPlayer == TipoCasilla.Blanco ? 0 : 7;
 
-        if (colorPlayer is ColorCasilla.Blanco)
+        if (colorPlayer is TipoCasilla.Blanco)
         {
-            _builderPiezaBlanca = PiezasFactory.Builder.Create().PiezaBlanca().Build();
+            _builderPieza = PiezasFactory.Builder.Create().PiezaBlanca().Build();
+            colorPieza = ColorDePieza.Blanco;
         }
 
-        if (colorPlayer is ColorCasilla.Negro)
+        if (colorPlayer is TipoCasilla.Negro)
         {
-            _builderPiezaBlanca = PiezasFactory.Builder.Create().PiezaNegra().Build();
+            _builderPieza = PiezasFactory.Builder.Create().PiezaNegra().Build();
+            colorPieza = ColorDePieza.Negro;
         }
-
+        
         _casillas = casillas;
     }
 
     private void SetPeones()
-        => _casillas.Where(j => j.Fila == filaPeones).ToList().ForEach(j => j.Pieza = _builderPiezaBlanca.Peones);
+    {
+        for(int i = 0; i < _casillas.GetLength(0); i++)
+        {
+            if (i != filaPeones) continue;
 
-    private void SetTorres()
-        => _casillas.Where(j => j.Fila == filaNoPeones && j.Columna == 0 || j.Fila == filaNoPeones && j.Columna == 7)
-            .ToList()
-            .ForEach(j => j.Pieza = _builderPiezaBlanca.Torres);
+            for(int j = 0; j < _casillas.GetLength(1); j++)
+            {
+                _casillas[i, j].Pieza = _builderPieza.Peones;
+                _casillas[i, j].Pieza.Color = (int)colorPieza;
+            }
+            return;
+        }
+    }
 
     private void SetCaballo()
-        => _casillas.Where(j => j.Fila == filaNoPeones && j.Columna == 1 || j.Fila == filaNoPeones && j.Columna == 6)
-            .ToList()
-            .ForEach(j => j.Pieza = _builderPiezaBlanca.Caballo);
+        => ColocarPieza(_builderPieza.Caballo, 1, 6);
 
     private void SetAlfil()
-        => _casillas.Where(j => j.Fila == filaNoPeones && j.Columna == 2 || j.Fila == filaNoPeones && j.Columna == 5)
-            .ToList()
-            .ForEach(j => j.Pieza = _builderPiezaBlanca.Alfil);
+        => ColocarPieza(_builderPieza.Alfil, 2, 5);
+
+    private void SetTorres()
+        => ColocarPieza(_builderPieza.Torres, 0, 7);
 
     private void SetReina()
-        => _casillas.Where(j => j.Fila == filaNoPeones && j.Columna == 3).ToList()
-            .ForEach(j => j.Pieza = _builderPiezaBlanca.Reina);
+        => ColocarPieza(_builderPieza.Reina, 4, 4);
 
     private void SetRey()
-        => _casillas.Where(j => j.Fila == filaNoPeones && j.Columna == 4).ToList()
-            .ForEach(j => j.Pieza = _builderPiezaBlanca.Rey);
+        => ColocarPieza(_builderPieza.Rey, 3, 3);
 
+
+    #region ColocarPieza
+    private void ColocarPieza(Piezas builderPieza, int columna1, int columna2)
+    {
+        for (int i = 0; i < _casillas.GetLength(0); i++)
+        {
+            if (i != filaNoPeones) continue;
+
+            for (int j = 0; j < _casillas.GetLength(1); j++)
+            {
+                if (j == columna1 || j == columna2) 
+                { 
+                    _casillas[i, j].Pieza = builderPieza;
+                    _casillas[i, j].Pieza.Color = (int)colorPieza;
+                }
+            }
+            return;
+        }
+    }
+    #endregion
+
+
+    #region SetPiezasToCasillas
     public void SetPiezasToCasillas()
     {
         SetPeones();
-        SetTorres();
         SetCaballo();
         SetAlfil();
+        SetTorres();
         SetReina();
         SetRey();
     }
+    #endregion
 }

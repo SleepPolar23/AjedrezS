@@ -1,37 +1,41 @@
-﻿using Ajedrez.Domain;
-using System.Collections.Generic;
+﻿using Ajedrez.Controller;
+using Ajedrez.Controller.Enums.ParaPieza;
+using System;
 using System.Drawing;
 
 namespace Ajedrez
 {
-    public class Piezas
+    public abstract class Piezas
     {
-        private TipoDePieza _tipoPieza;
         private int _color;
         private bool _movimientoEspecial;
         public Image _image;
-		public List<Coordenada> Movimientos { 
-            get
-            {
-                switch (_tipoPieza)
-                {
-                    case (TipoDePieza.Peon):
-						return new List<Coordenada>(){
-							new Coordenada(0, 1),
-							new Coordenada(0, 2)
-						};
-                    default:
-                        throw new System.Exception();
-                }
-            }
-        }
 
-        public Piezas(Image pictureBox, TipoDePieza tipoDePieza)
+        public Piezas()
         {
-            _image = pictureBox;
-            _tipoPieza = tipoDePieza;
-            _color = -1;
+            _color = 0;
+            _movimientoEspecial = false;
+            _image = null;
         }
 
-	}
+        public Piezas(Image image, MovimientoEspecial movimientoEspecial)
+        {
+            _image = image;
+            _movimientoEspecial = (movimientoEspecial == Controller.MovimientoEspecial.True);
+        }
+
+        public abstract void ObtenerMovimientosPosibles(Casilla[,] casillas, Point coordenada);
+
+        public int Color
+        {
+            get => _color;
+            set => _color = value;
+        }
+
+        public bool MovimientoEspecial
+        {
+            get => _movimientoEspecial;
+            set => _movimientoEspecial = value;
+        }
+    }
 }
